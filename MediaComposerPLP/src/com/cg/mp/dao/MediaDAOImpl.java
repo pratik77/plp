@@ -263,5 +263,58 @@ public class MediaDAOImpl implements IMediaDAO {
 		return new ModelAndView("createSuccess","userMasterDTO",userMasterDTO);
 	}
 
+	@Override
+	public List<SongMasterDTO> listAllSongs() throws MediaException {
+		// TODO Auto-generated method stub
+		TypedQuery<SongMasterDTO> query = entityManager.createQuery(
+				"select songMasterDTO from SongMasterDTO songMasterDTO ",
+				SongMasterDTO.class);
+		try {
+			return query.getResultList();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			throw new MediaException(e.getMessage()+" and problems in loading songs ..");
+		}
+	}
+
+	@Override
+	public SongMasterDTO insertSong(SongMasterDTO songMasterDTO) throws MediaException {
+		// TODO Auto-generated method stub
+		try {
+			entityManager.persist(songMasterDTO);
+			entityManager.flush();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			throw new MediaException(e.getMessage()+" and problems in inserting songs.");
+		}
+		return songMasterDTO;
+		
+	}
+	
+	@Override
+	public ComposerMasterDTO deleteComposer(int composerId) throws MediaException {
+		ComposerMasterDTO composerMasterDTO;
+		try {
+			composerMasterDTO = entityManager.find(ComposerMasterDTO.class, composerId);
+			entityManager.remove(composerMasterDTO);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			throw new MediaException(e.getMessage()+" problem in composer deletion");
+		}
+		return composerMasterDTO;
+	}
+
+	@Override
+	public SongMasterDTO deleteSong(int songId) throws MediaException {
+		SongMasterDTO songMasterDTO = entityManager.find(
+				SongMasterDTO.class, songId);
+		try {
+			entityManager.remove(songMasterDTO);
+		} catch (Exception e) {
+			throw new MediaException(e.getMessage()+" and problems in deleting song.");
+		}
+		return songMasterDTO;
+	}
+
 
 }

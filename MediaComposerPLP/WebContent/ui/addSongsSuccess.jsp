@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Success</title>
+<title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="css/adminstyle.css">
 </head>
 <body>
@@ -23,7 +23,10 @@
 				Composer</a><br> <a href="retrieveArtistListForSongs.obj">Show
 				songs sung by Artist</a><br>
 		</div>
-		<div class="side-nav1"><h1>${message}</h1></div>
+		<div class="side-nav1">
+			<h1>Song inserted successfully with song ID:
+				${songMasterDTO.songId}</h1>
+		</div>
 	</div>
 </body>
 </html>

@@ -42,4 +42,12 @@ public interface IMediaService {
 
 	ModelAndView checkPassword(String password, String cpassword) throws MediaException;
 
+	List<SongMasterDTO> listAllSongs()throws MediaException;
+
+	SongMasterDTO insertSong(SongMasterDTO songMasterDTO, int userId)throws MediaException;
+
+	ComposerMasterDTO deleteComposer(int composerId)throws MediaException;
+	
+	SongMasterDTO deleteSong(int songId) throws MediaException;
+
 }

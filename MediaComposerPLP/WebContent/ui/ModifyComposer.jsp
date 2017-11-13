@@ -7,9 +7,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Modify Composer</title>
 <link rel="stylesheet" type="text/css" href="css/adminstyle.css">
+<script type="text/javascript" src="javascript/DiedDate.js"></script>
 </head>
 <body>
-<div class="header">
+	<div class="header">
 		<h1>Hello Admin</h1>
 		<a href="ui/login.jsp">Logout</a>
 	</div>
@@ -17,7 +18,7 @@
 		<div class="side-nav1">
 			<a href="retrieveAllComposer.obj">Composers</a><br> <a
 				href="retrieveAllArtist.obj">Artists</a><br> <a
-				href="retrieveComposerSong.obj">Songs</a><br> <a
+				href="retrieveSongs.obj">Songs</a><br> <a
 				href="retrieveComposerSong.obj">Composer Song Association</a><br>
 			<a href="retrieveArtistSong.obj">Artist Song Association</a><br>
 			<a href="retrieveComposerListForSongs.obj">Show songs composed by
@@ -26,8 +27,9 @@
 		</div>
 		<div class="side-nav1">
 			<h1>Modify Composer Details</h1>
-			<form:form action="insertModifiedComposer.obj"
-				modelAttribute="composerMasterDTO" method="post">
+			<form:form name="form" action="insertModifiedComposer.obj"
+				modelAttribute="composerMasterDTO" method="post"
+				onsubmit="return validateDiedDate()">
 
 				<form:input type="hidden" path="composerId"
 					value="${composerMasterDTO.composerId}" />
@@ -35,47 +37,36 @@
 		
 		<form:label path="composerName">Composer Name:            </form:label>
 				<form:input path="composerName"
-					value="${composerMasterDTO.composerName}" required="true" />
+					value="${composerMasterDTO.composerName}"
+					pattern="[A-Za-z]{1}[A-Za-z ]{0,}"
+					title="Name should contain alphabets only" required="true" />
 				<br />`
 
 		<form:label path="composerBornDate">Composer Birth Date:      </form:label>
 				<form:input type="date" path="composerBornDate"
-					value="${composerMasterDTO.composerBornDate}" required="true" />
+					name="composerBornDate"
+					value="${composerMasterDTO.composerBornDate}" max="${sqlDate}"
+					required="true" />
 				<br />
 
 				<form:label path="composerDiedDate">Composer Death Date:      </form:label>
 				<form:input type="date" path="composerDiedDate"
-					value="${composerMasterDTO.composerDiedDate}" required="true" />
+					name="composerDiedDate"
+					value="${composerMasterDTO.composerDiedDate}" max="${sqlDate}" />
 				<br />
 
 				<form:label path="composerCaeipiNumber">Composer CAEIPI Number:   </form:label>
 				<form:input path="composerCaeipiNumber"
-					value="${composerMasterDTO.composerCaeipiNumber}" required="true" />
+					value="${composerMasterDTO.composerCaeipiNumber}"
+					pattern="[1-9]{1}[0-9]{6,9}"
+					title="CAEIPI Number should be 7 to 10 digits" required="true" />
 				<br />
 
 				<form:label path="composerMusicSocId">Composer Music Society ID:</form:label>
 				<form:input path="composerMusicSocId"
-					value="${composerMasterDTO.composerMusicSocId}" required="true" />
-				<br />
-
-				<form:label path="createdOn">Created On:               </form:label>
-				<form:input path="createdOn" value="${composerMasterDTO.createdOn}"
-					readonly="true" required="true" />
-				<br />
-
-				<form:label path="createdBy">Created By:               </form:label>
-				<form:input path="createdBy" value="${composerMasterDTO.createdBy}"
-					readonly="true" required="true" />
-				<br />
-
-				<form:label path="updatedOn">Updated On:               </form:label>
-				<form:input path="updatedOn" value="${composerMasterDTO.updatedOn}"
-					readonly="true" required="true" />
-				<br />
-
-				<form:label path="updatedBy">Updated By:               </form:label>
-				<form:input path="updatedBy" value="${composerMasterDTO.updatedBy}"
-					readonly="true" required="true" />
+					value="${composerMasterDTO.composerMusicSocId}"
+					pattern="[1-9]{1}[0-9]{2}"
+					title="Music Society Id should be a 3 Digit Number" required="true" />
 				<br />
 
 				<input type="submit" value="Modify Details" />

@@ -48,6 +48,12 @@ public interface IMediaDAO {
 
 	ModelAndView checkPassword(UserMasterDTO userMasterDTO) throws MediaException;
 
-	
+	List<SongMasterDTO> listAllSongs()throws MediaException;
+
+	SongMasterDTO insertSong(SongMasterDTO songMasterDTO)throws MediaException;
+
+	ComposerMasterDTO deleteComposer(int composerId)throws MediaException;
+
+	SongMasterDTO deleteSong(int songId) throws MediaException;
 
 }

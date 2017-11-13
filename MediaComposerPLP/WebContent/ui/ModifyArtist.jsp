@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="css/adminstyle.css">
+<script type="text/javascript" src="javascript/DiedDate.js"></script>
 </head>
 <body>
 	<div class="header">
@@ -17,7 +18,7 @@
 		<div class="side-nav1">
 			<a href="retrieveAllComposers.obj">Composer</a><br> <a
 				href="retrieveAllArtists.obj">Artist</a><br> <a
-				href="retrieveComposerSong.obj">Songs</a><br> <a
+				href="retrieveSongs.obj">Songs</a><br> <a
 				href="retrieveComposerSong.obj">Composer Song Association</a><br>
 			<a href="retrieveArtistSong.obj">Artist Song Association</a><br>
 			<a href="retrieveComposerListForSongs.obj">Show songs composed by
@@ -26,34 +27,36 @@
 		</div>
 		<div class="side-nav1">
 			<h1>Modify Artist Details</h1>
-			<form:form action="insertModifiedArtist.obj"
-				modelAttribute="artistMasterDTO" method="post">
+			<form:form name="form" action="insertModifiedArtist.obj"
+				modelAttribute="artistMasterDTO" method="post" onsubmit="return validateArtistDiedDate()">
 
 				<form:input type="hidden" path="artistId"
 					value="${artistMasterDTO.artistId}" />
-				<br />`
+				<br />
 		
 		<form:label path="artistName">Artist Name:</form:label>
-				<form:input path="artistName" value="${artistMasterDTO.artistName}"
+				<form:input path="artistName" value="${artistMasterDTO.artistName}" pattern="[A-Za-z]{1}[A-Za-z ]{0,}"
+					title="Name should contain alphabets only"
 					required="true" />
-				<br />`
+				<br />
 
 		<form:label path="artistBornDate">Artist Birth Date:</form:label>
 				<form:input type="date" path="artistBornDate"
-					value="${artistMasterDTO.artistBornDate}" required="true" />
+					value="${artistMasterDTO.artistBornDate}" max="${sqlDate}" required="true" />
 				<br />
 
 				<form:label path="artistDiedDate">Artist Death Date:</form:label>
 				<form:input type="date" path="artistDiedDate"
-					value="${artistMasterDTO.artistDiedDate}" required="true" />
+					value="${artistMasterDTO.artistDiedDate}" max="${sqlDate}" required="true" />
 				<br />
 
 				<form:label path="artistType">Artist Type:</form:label>
-				<form:input path="artistType" value="${artistMasterDTO.artistType}"
-					required="true" />
-				<br />
+				<form:radiobutton path="artistType" value="M" required="true" />Male
+				<form:radiobutton path="artistType" value="F"/>Female
+					
+				<br /><br>
 
-				<form:label path="createdOn">Created On:</form:label>
+				<%-- <form:label path="createdOn">Created On:</form:label>
 				<form:input path="createdOn" value="${artistMasterDTO.createdOn}"
 					readonly="true" required="true" />
 				<br />
@@ -71,7 +74,7 @@
 				<form:label path="updatedBy">Created By:</form:label>
 				<form:input path="updatedBy" value="${artistMasterDTO.updatedBy}"
 					readonly="true" required="true" />
-				<br />
+				<br /> --%>
 
 				<input type="submit" value="Modify Details" />
 			</form:form>

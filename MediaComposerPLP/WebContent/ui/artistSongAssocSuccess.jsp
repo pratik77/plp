@@ -16,7 +16,7 @@
 		<div class="side-nav1">
 			<a href="retrieveAllComposer.obj">Composers</a><br> <a
 				href="retrieveAllArtist.obj">Artists</a><br> <a
-				href="retrieveComposerSong.obj">Songs</a><br> <a
+				href="retrieveSongs.obj">Songs</a><br> <a
 				href="retrieveComposerSong.obj">Composer Song Association</a><br>
 			<a href="retrieveArtistSong.obj">Artist Song Association</a><br>
 			<a href="retrieveComposerListForSongs.obj">Show songs composed by

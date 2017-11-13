@@ -184,5 +184,36 @@ public class MediaService implements IMediaService {
 			return new ModelAndView("createAnAccount","message","password does not match");
 	}
 
+	@Override
+	public List<SongMasterDTO> listAllSongs() throws MediaException {
+		// TODO Auto-generated method stub
+		songs=mediaDAO.listAllSongs();
+		return songs;
+	}
+
+	@Override
+	public SongMasterDTO insertSong(SongMasterDTO songMasterDTO,int userId)
+			throws MediaException {
+		// TODO Auto-generated method stub
+		songMasterDTO.setCreatedBy(userId);
+		songMasterDTO.setCreatedOn(Date.valueOf(LocalDate.now()));
+		songMasterDTO.setUpdatedBy(userId);
+		songMasterDTO.setUpdatedOn(Date.valueOf(LocalDate.now()));
+		return mediaDAO.insertSong(songMasterDTO);
+	}
+	@Override
+	public ComposerMasterDTO deleteComposer(int composerId) throws MediaException {
+		return mediaDAO.deleteComposer(composerId);
+	}
+
+	@Override
+	public SongMasterDTO deleteSong(int songId) throws MediaException {
+		try {
+			return mediaDAO.deleteSong(songId);
+		} catch (Exception e) {
+			throw new MediaException(e.getMessage() + "Problem while deleting song");
+		}
+	}
+
 
 }
