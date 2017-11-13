@@ -135,6 +135,7 @@ public class MediaService implements IMediaService {
 	public void compSongAssoc(int composerId, int[] songIdList, int userId) throws MediaException {
 		// TODO Auto-generated method stub
 		for (int songId : songIdList) {
+			ComposerSongAssoc composerSongAssoc = new ComposerSongAssoc();
 			composerSongAssoc.setComposerId(composerId);
 			composerSongAssoc.setSongId(songId);
 			composerSongAssoc.setCreatedBy(userId);
@@ -196,6 +197,7 @@ public class MediaService implements IMediaService {
 		// TODO Auto-generated method stub
 
 		for (int songId : songIdList) {
+			ArtistSongAssoc artistSongAssoc = new ArtistSongAssoc();
 			artistSongAssoc.setArtistId(artistId);
 			artistSongAssoc.setSongId(songId);
 			artistSongAssoc.setCreatedBy(userId);

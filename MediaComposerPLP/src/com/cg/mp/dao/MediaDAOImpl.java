@@ -247,10 +247,8 @@ public class MediaDAOImpl implements IMediaDAO {
 	@Override
 	public void artistSongAssoc(ArtistSongAssoc artistSongAssoc) throws MediaException {
 
-		System.out.println("h1");
 		try {
 			entityManager.persist(artistSongAssoc);
-			System.out.println("h2");
 			entityManager.flush();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
