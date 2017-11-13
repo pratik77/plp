@@ -9,6 +9,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
+/**
+ * File name: SongMasterDTO
+ * Package name: com.cg.mp.dto
+ * Description:This is a POJO class which provides getters and setters for Song
+ * Version: 	1.0
+ * Restrictions:N/A
+ * @author pratiksa,sayush,rauagarw,sapsaha
+ * Date: 13/11/2017
+ */
+
 @Entity
 @Table(name="SONG_MASTER")
 public class SongMasterDTO 
@@ -57,6 +68,11 @@ public class SongMasterDTO
 		this.updatedOn = updatedOn;
 		this.songDelFlag = songDelFlag;
 	}
+	
+	/*
+	 * Getter Setter Methods for SongMasterDTO  
+	 */
+	
 	public int getSongId() {
 		return songId;
 	}

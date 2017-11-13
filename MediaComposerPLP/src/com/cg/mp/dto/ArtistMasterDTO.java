@@ -9,6 +9,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * File name: ArtistMasterDTO
+ * Package name: com.cg.mp.dto
+ * Description:This is a POJO class which provides getters and setters for Artist
+ * Version: 	1.0
+ * Restrictions:N/A
+ * @author pratiksa,sayush,rauagarw,sapsaha
+ * Date: 13/11/2017
+ */
+
 @Entity
 @Table(name="artist_master")
 public class ArtistMasterDTO {
@@ -50,10 +60,16 @@ public class ArtistMasterDTO {
 		System.out.printf("%-30s%-30s%-30s%-30s%-30s%-30s%-30s%-30s%-30s%-30s\n","Artist Id","Artist Name","Artist Type","Born Date","Died Date","createdBy","Created On","UpdatedBy","Updated On","Del Flag");
 		System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 	}
+	
 	@Override
 	public String toString() {
 		return String.format("%-30s%-30s%-30s%-30s%-30s%-30s%-30s%-30s%-30s%-30s", artistId, artistName, artistType,artistBornDate,artistDiedDate,createdBy,createdOn,updatedBy,updatedOn,artistDelFlag);
 	}
+	
+	/*
+	 * Getter and Setter Methods for Artist
+	 */
+	
 	public int getArtistId() {
 		return artistId;
 	}

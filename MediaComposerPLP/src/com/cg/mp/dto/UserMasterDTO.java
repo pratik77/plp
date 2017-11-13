@@ -10,6 +10,16 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 
+/**
+ * File name: UserMasterDTO
+ * Package name: com.cg.mp.dto
+ * Description:This is a POJO class which provides getters and setters for User
+ * Version: 	1.0
+ * Restrictions:N/A
+ * @author pratiksa,sayush,rauagarw,sapsaha
+ * Date: 13/11/2017
+ */
+
 @Entity
 @Table(name="USER_MASTER")
 public class UserMasterDTO 

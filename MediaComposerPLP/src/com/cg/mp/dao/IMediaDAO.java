@@ -12,6 +12,16 @@ import com.cg.mp.dto.SongMasterDTO;
 import com.cg.mp.dto.UserMasterDTO;
 import com.cg.mp.exception.MediaException;
 
+/**
+ * File name: IMediaDAO
+ * Package name: com.cg.mp.dao
+ * Description:	Consists of all the Method Declarations of those methods present in MediaDAOImpl.java 		
+ * Version: 	1.0
+ * Restrictions:	N/A
+ * @author rauagarw,pratiksa,sayush,sapsaha
+ * Date: 13/11/2017
+ */
+
 public interface IMediaDAO {
 
 	List<ComposerMasterDTO> loadAllComposer() throws MediaException;

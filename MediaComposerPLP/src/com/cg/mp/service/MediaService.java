@@ -18,6 +18,16 @@ import com.cg.mp.dto.SongMasterDTO;
 import com.cg.mp.dto.UserMasterDTO;
 import com.cg.mp.exception.MediaException;
 
+/**
+ * File name: MediaService
+ * Package name: com.cg.mp.service
+ * Description:	Implementation class of service layer which interacts with the data access layer and performs the appropriate operations.
+ * Version: 	1.0
+ * Restrictions:	N/A 
+ * @author rauagarw,pratiksa,sayush,sapsaha
+ * Date: 13/11/2017
+ */
+
 @Component("service")
 public class MediaService implements IMediaService {
 
@@ -33,6 +43,13 @@ public class MediaService implements IMediaService {
 	List<ArtistSongAssoc> artistSongs = new ArrayList();
 	List<SongMasterDTO> songs = new ArrayList();
 
+	/**
+	 * Method Name:	checkLogin
+	 * Description:	Calls the checkLogin method of the data access layer and returns the result to the MediaController.
+	 * Return Type:	String
+	 * @param:	int username, String password
+	 */
+	
 	@Override
 	public String checkLogin(int username, String password) throws MediaException {
 		// TODO Auto-generated method stub
@@ -45,17 +62,36 @@ public class MediaService implements IMediaService {
 			return "../login1";
 
 	}
+	
+	/**
+	 * Method Name:	loadAllComposer
+	 * Description:	Calls the loadAllComposer method of the data access layer and returns the result to the MediaController.
+	 * Return Type:	List
+	 */
 
 	@Override
 	public List<ComposerMasterDTO> loadAllComposer() throws MediaException {
 		return mediaDAO.loadAllComposer();
 	}
 
+	/**
+	 * Method Name:	insertComposer
+	 * Description:	Calls the insertComposer method of the data access layer and returns the result to the MediaController.
+	 * Return Type:	ComposerMasterDTO
+	 * @param:	ComposerMasterDTO composer
+	 */
+	
 	@Override
 	public ComposerMasterDTO insertComposer(ComposerMasterDTO composer) throws MediaException {
 
 		return mediaDAO.insertComposer(composer);
 	}
+	
+	/**
+	 * Method Name:	loadAllSongs
+	 * Description:	Calls the loadAllSongs method of the data access layer and returns the result to the MediaController.
+	 * Return Type:	List
+	 */
 
 	@Override
 	public List<SongMasterDTO> loadAllSongs() throws MediaException {
@@ -63,17 +99,38 @@ public class MediaService implements IMediaService {
 		return mediaDAO.loadAllSongs();
 
 	}
+	
+	/**
+	 * Method Name:	getComposerById
+	 * Description:	Calls the getComposerById method of the data access layer and returns the result to the MediaController.
+	 * Return Type:	ComposerMasterDTO
+	 * @param:	int composerId
+	 */
 
 	@Override
 	public ComposerMasterDTO getComposerById(int composerId) throws MediaException {
 		return mediaDAO.getComposerById(composerId);
 	}
 
+	/**
+	 * Method Name:	updateComposer
+	 * Description:	Calls the updateComposer method of the data access layer and returns the result to the MediaController.
+	 * Return Type:	ComposerMasterDTO
+	 * @param:	ComposerMasterDTO composerMasterDTO
+	 */
+	
 	@Override
 	public ComposerMasterDTO updateComposer(ComposerMasterDTO composerMasterDTO) throws MediaException {
 		return mediaDAO.updateComposer(composerMasterDTO);
 	}
 
+	/**
+	 * Method Name:	compSongAssoc
+	 * Description:	Calls the compSongAssoc method of the data access layer and returns the result to the MediaController.
+	 * Return Type:	void
+	 * @param:	int composerId, int[] songIdList, int userId
+	 */
+	
 	@Override
 	public void compSongAssoc(int composerId, int[] songIdList, int userId) throws MediaException {
 		// TODO Auto-generated method stub
@@ -87,12 +144,26 @@ public class MediaService implements IMediaService {
 			mediaDAO.compSongAssoc(composerSongAssoc);
 		}
 	}
-
+	
+	/**
+	 * Method Name:	loadAllArtists
+	 * Description:	Calls the loadAllArtists method of the data access layer and returns the result to the MediaController.
+	 * Return Type:	List
+	 */
+	
+	@Override
 	public List<ArtistMasterDTO> loadAllArtists() throws MediaException {
 
 		return mediaDAO.loadAllArtists();
 
 	}
+	
+	/**
+	 * Method Name:	getArtistById
+	 * Description:	Calls the getArtistById method of the data access layer and returns the result to the MediaController.
+	 * Return Type:	ArtistMasterDTO
+	 * @param:	int artistId
+	 */
 
 	@Override
 	public ArtistMasterDTO getArtistById(int artistId) throws MediaException {
@@ -100,12 +171,26 @@ public class MediaService implements IMediaService {
 		return mediaDAO.getArtistById(artistId);
 	}
 
+	/**
+	 * Method Name:	deleteArtist
+	 * Description:	Calls the deleteArtist method of the data access layer and returns the result to the MediaController.
+	 * Return Type:	ArtistMasterDTO
+	 * @param:	int artistId
+	 */
+	
 	@Override
 	public ArtistMasterDTO deleteArtist(int artistId) throws MediaException {
 
 		return mediaDAO.deleteArtist(artistId);
 	}
 
+	/**
+	 * Method Name:	artistSongAssoc
+	 * Description:	Calls the artistSongAssoc method of the data access layer and returns the result to the MediaController.
+	 * Return Type:	void
+	 * @param:	int artistId, int[] songIdList, int userId
+	 */
+	
 	@Override
 	public void artistSongAssoc(int artistId, int[] songIdList, int userId) throws MediaException {
 		// TODO Auto-generated method stub
@@ -121,6 +206,13 @@ public class MediaService implements IMediaService {
 		}
 
 	}
+	
+	/**
+	 * Method Name:	listAllSongsForComposer
+	 * Description:	Calls the listAllSongsForComposer method of the data access layer and returns the result to the MediaController.
+	 * Return Type:	List
+	 * @param:	int composerId
+	 */
 
 	@Override
 	public List<SongMasterDTO> listAllSongsForComposer(int composerId) throws MediaException {
@@ -137,6 +229,13 @@ public class MediaService implements IMediaService {
 		return songs;
 
 	}
+	
+	/**
+	 * Method Name:	insertArtist
+	 * Description:	Calls the insertArtist method of the data access layer and returns the result to the MediaController.
+	 * Return Type:	ArtistMasterDTO
+	 * @param:	ArtistMasterDTO artistMasterDTO
+	 */
 
 	@Override
 
@@ -144,6 +243,13 @@ public class MediaService implements IMediaService {
 		
 		return mediaDAO.insertArtist(artistMasterDTO);
 	}
+	
+	/**
+	 * Method Name:	updateArtist
+	 * Description:	Calls the updateArtist method of the data access layer and returns the result to the MediaController.
+	 * Return Type:	ArtistMasterDTO
+	 * @param:	ArtistMasterDTO artistMasterDTO
+	 */
 
 	@Override
 	public ArtistMasterDTO updateArtist(ArtistMasterDTO artistMasterDTO) throws MediaException {
@@ -151,7 +257,14 @@ public class MediaService implements IMediaService {
 		return mediaDAO.updateArtist(artistMasterDTO);
 	}
 
+	/**
+	 * Method Name:	listAllSongsForArtist
+	 * Description:	Calls the listAllSongsForArtist method of the data access layer and returns the result to the MediaController.
+	 * Return Type:	List
+	 * @param:	int artistId
+	 */
 
+	@Override
 	public List<SongMasterDTO> listAllSongsForArtist(int artistId) throws MediaException {
 		// TODO Auto-generated method stub
 		artistSongs = mediaDAO.getArtistSongs(artistId);
@@ -165,6 +278,13 @@ public class MediaService implements IMediaService {
 		}
 		return songs;
 	}
+	
+	/**
+	 * Method Name:	checkPassword
+	 * Description:	Calls the checkPassword method of the data access layer and returns the result to the MediaController.
+	 * Return Type:	ModelAndView
+	 * @param:	String password, String cpassword
+	 */
 
 	@Override
 	public ModelAndView checkPassword(String password, String cpassword) throws MediaException {
