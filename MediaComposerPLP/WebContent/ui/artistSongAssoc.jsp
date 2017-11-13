@@ -31,6 +31,13 @@
 				onsubmit="return validateSongs(${songList.size()})">
 				<h1>Artist List</h1>
 				<table border="1" id="table">
+					<tr>
+						<th>Id</th>
+						<th>Name</th>
+						<th>Gender</th>
+						<th>Born Date</th>
+						<th>Died Date</th>
+					</tr>
 					<c:forEach items="${artistList}" var="artist">
 						<tr>
 
@@ -46,7 +53,13 @@
 				<br> <br> <br>
 				<h1>Songs List</h1>
 				<table border="1" id="table">
+					<tr>
+						<th>Id</th>
+						<th>Name</th>
+						<th>Duration</th>
+					</tr>
 					<c:forEach items="${songList}" var="song">
+
 						<tr>
 
 							<td><input type="checkbox" name="songSelect"
