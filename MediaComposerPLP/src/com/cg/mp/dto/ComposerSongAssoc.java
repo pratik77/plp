@@ -5,28 +5,34 @@ import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+/**
+ * File name: ComposerSongAssoc
+ * Package name: com.cg.mp.dto
+ * Description:This is a POJO class which provides getters and setters for Composer Song Association
+ * Version: 	1.0
+ * Restrictions:N/A
+ * @author pratiksa,sayush,rauagarw,sapsaha
+ * Date: 13/11/2017
+ */
 
 @Entity
 @Table(name="COMPOSER_SONG_ASSOC")
 public class ComposerSongAssoc implements Serializable {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * 
-	 */
-	
-
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="ASSOCIATION_ID")
+	private int associationId;
 	
 	@Column(name="COMPOSER_ID")
 	private int composerId;
 	
-	@Id
 	@Column(name="SONG_ID")
 	private int songId;
 	
@@ -41,6 +47,10 @@ public class ComposerSongAssoc implements Serializable {
 	
 	@Column(name="UPDATED_ON")
 	private Date updatedOn;
+	
+	/*
+	 * Getter Setter methods for ComposerSongAssoc
+	 */
 	
 	public int getComposerId() {
 		return composerId;

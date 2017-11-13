@@ -1,0 +1,134 @@
+--drop tables
+
+DROP TABLE User_Master;
+DROP TABLE Composer_Master;
+DROP TABLE Song_Master;
+DROP TABLE Artist_Master;
+DROP TABLE Artist_Song_Assoc;
+DROP TABLE Composer_Song_Assoc;
+DROP TABLE MusicSociety_Master;
+
+
+
+--Create tables
+
+CREATE table User_Master
+(
+	User_ID	 NUMBER(6),
+	User_Password VARCHAR2(20),
+	Created_By NUMBER(6),
+	Created_On Date,
+	Updated_By NUMBER(6),
+	Updated_On Date,
+	User_Flag NUMBER(1)
+);
+
+CREATE table Composer_Master
+(
+	Composer_id NUMBER(6),
+	Composer_Name VARCHAR2(50), 
+	Composer_BornDate Date, 
+	Composer_DiedDate Date, 
+	Composer_CaeipiNumber VARCHAR2(10), 
+	Composer_MusicSocietyID CHAR(3), 
+	Created_By NUMBER(6), 
+	Created_On Date,
+	Updated_By NUMBER(6), 
+	Updated_On Date, 
+	Composer_DeletedFlag Boolean
+);
+
+CREATE table Song_master
+(
+	Song_Id NUMBER(6), 
+	Song_Name VARCHAR2(50), 
+	Song_Duration TIMESTAMP, 
+	Created_By NUMBER(6), 
+	Created_On Date, 
+	updated_By NUMBER(6), 
+	Updated_On Date, 
+	Song_DeletedFlag NUMBER(1)
+);
+
+CREATE table Artist_Master
+(
+	Artist_Id NUMBER(6), 
+	Artist_Name VARCHAR2(50), 
+	Artist_Type CHAR(1), 
+	Artist_BornDate Date,
+	Artist_DiedDate Date, 
+	Created_By NUMBER(6),
+	Created_On Date, 
+	Updated_By NUMBER(6), 
+	Updated_On Date, 
+	Artist_DeletedFlag NUMBER(1)
+);
+
+CREATE table Artist_Song_Assoc
+(
+	Association_Id NUMBER(6),
+	Artist_Id NUMBER(6), 
+	Song_Id NUMBER(6), 
+	Created_By NUMBER(6), 
+	Created_On Date, 
+	Updated_By NUMBER(6), 
+	Updated_On Date
+);
+
+CREATE table Composer_Song_Assoc
+(
+	Association_Id NUMBER(6),
+	Composer_Id NUMBER(6), 
+	Song_Id NUMBER(6), 
+	Created_By NUMBER(6), 
+	Created_On Date, 
+	Updated_By NUMBER(6), 
+	Updated_On Date
+);
+
+CREATE table MusicSociety_Master
+(
+	Composer_MusicSocietyID CHAR(3), 
+	Composer_MusicSocietyName VARCHAR2(50)
+);
+
+--Insert Statements
+
+
+--ADMIN
+INSERT INTO User_master values(100001,'zyrus',100001,sysdate,100001,sysdate,1)
+INSERT INTO User_master values(100002,'ZYRUS1',100001,sysdate,100001,sysdate,1)
+INSERT INTO User_master values(100003,'zyrus2',100001,sysdate,100001,sysdate,1)
+INSERT INTO User_master values(100004,'zyrus3',100001,sysdate,100001,sysdate,1)
+
+--USER
+INSERT INTO User_master values(100051,'cg1',100001,sysdate,100001,sysdate,1)
+INSERT INTO User_master values(100052,'cg2',100001,sysdate,100001,sysdate,1)
+INSERT INTO User_master values(100053,'cg3',100001,sysdate,100001,sysdate,1)
+INSERT INTO User_master values(100054,'cg4',100001,sysdate,100001,sysdate,1)
+
+--COMPOSERS
+INSERT INTO Composer_Master values(100101,'Javed Akhtar','12-DEC-1950',null,'12345678','1ei',100001,sysdate,100001,sysdate,1)
+INSERT INTO Composer_Master values(100102,'Anu Malik','11-DEC-1970',null,'12445678','2ei',100001,sysdate,100001,sysdate,1)
+INSERT INTO Composer_Master values(100103,'Kishore Kumar','12-DEC-1960','10-OCT-1985','12345679','3ei',100001,sysdate,100001,sysdate,1)
+INSERT INTO Composer_Master values(100104,'Zoya Akhtar','12-DEC-1987',null,'18345678','4ei',100001,sysdate,100001,sysdate,1)
+
+--SONGS
+
+INSERT INTO Song_master Values(100201,'Mitwa','00:05:00',100001,sysdate,100001,sysdate,1)
+INSERT INTO Song_master Values(100202,'Ye Kaali Kaali Aankhein','00:04:30',100001,sysdate,100001,sysdate,1)
+INSERT INTO Song_master Values(100203,'Ek ladki bheegi bhaagi si','00:03:20',100001,sysdate,100001,sysdate,1)
+INSERT INTO Song_master Values(100204,'Swing','00:03:56',100001,sysdate,100001,sysdate,1)
+
+--ARTISTS
+
+INSERT INTO Artist_Master values(100501,'Shankar Mahadevan','M','12-JAN-1970',null,100001,sysdate,100001,sysdate,1)
+INSERT INTO Artist_Master values(100501,'Anu Malik','M','19-JAN-1970',null,100001,sysdate,100001,sysdate,1)
+INSERT INTO Artist_Master values(100501,'Mohd Rafi','M','30-MAR-1956','16-AUG-1990',100001,sysdate,100001,sysdate,1)
+INSERT INTO Artist_Master values(100501,'Sunidhi Chauhan','F','12-JAN-1970',null,100001,sysdate,100001,sysdate,1)
+
+--MUSIC SOCIETY
+INSERT INTO MusicSociety_Master Values('1ei','Abhinay Music Society')
+INSERT INTO MusicSociety_Master Values('2ei','Smile Music Society')
+INSERT INTO MusicSociety_Master Values('3ei','Retro Music Society')
+INSERT INTO MusicSociety_Master Values('4ei','Bliss Music Society')

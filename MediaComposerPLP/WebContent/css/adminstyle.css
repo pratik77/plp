@@ -96,6 +96,7 @@ input[type=submit]:hover, input[type=submit]:hover {
 #table td, #table th {
     border: 1px solid #ddd;
     padding: 8px;
+    text-align: center;
 }
 
 #table tr:nth-child(even){background-color: #f2f2f2;}
@@ -105,7 +106,7 @@ input[type=submit]:hover, input[type=submit]:hover {
 #table th {
     padding-top: 12px;
     padding-bottom: 12px;
-    text-align: left;
+    text-align: center;
     background-color: #03A9F4;
     color: white;
 }

@@ -18,6 +18,16 @@ import com.cg.mp.dto.SongMasterDTO;
 import com.cg.mp.dto.UserMasterDTO;
 import com.cg.mp.exception.MediaException;
 
+/**
+ * File name: MediaDAOImpl
+ * Package name: com.cg.mp.dao
+ * Description:	Implementation class of data access layer which interacts with the database and performs the appropriate operations.
+ * Version: 	1.0
+ * Restrictions:	N/A 
+ * @author rauagarw,pratiksa,sayush,sapsaha
+ * Date: 13/11/2017
+ */
+
 @Repository
 @Transactional(rollbackOn = MediaException.class)
 public class MediaDAOImpl implements IMediaDAO {
@@ -28,6 +38,14 @@ public class MediaDAOImpl implements IMediaDAO {
 	UserMasterDTO userMasterDTO = new UserMasterDTO();
 	ComposerMasterDTO composerMasterDTO = new ComposerMasterDTO();
 
+	/**
+	 * Method Name:	checkLogin
+	 * Description:	Checks for the login credentials for a given username and password from the database and returns the data to the service layer.
+	 * Return Type:	int
+	 * @param: int username
+	 * @param: String password
+	 */
+
 	@Override
 	public int checkLogin(int username, String password) throws MediaException {
 
@@ -35,7 +53,7 @@ public class MediaDAOImpl implements IMediaDAO {
 				.createQuery(
 						"SELECT userMasterDTO FROM UserMasterDTO "
 								+ "userMasterDTO WHERE userMasterDTO.userId=:puserId AND userMasterDTO.userPassword=:puserPassword",
-						UserMasterDTO.class);
+								UserMasterDTO.class);
 		query.setParameter("puserId", username);
 		query.setParameter("puserPassword", password);
 		List<UserMasterDTO> userMasterList;
@@ -50,6 +68,12 @@ public class MediaDAOImpl implements IMediaDAO {
 		return userMasterList.get(0).getUserFlag();
 	}
 
+	/**
+	 * Method Name:	loadAllComposer() 
+	 * Description:	Retrieves details of all the composers from the database and returns the data to the service layer.
+	 * Return Type:	List
+	 */
+
 	@Override
 	public List<ComposerMasterDTO> loadAllComposer() throws MediaException {
 		TypedQuery<ComposerMasterDTO> query = entityManager.createQuery(
@@ -61,6 +85,12 @@ public class MediaDAOImpl implements IMediaDAO {
 			throw new MediaException(e.getMessage()+" and problems in loading composers.");
 		}
 	}
+
+	/**
+	 * Method Name:	loadAllSongs() 
+	 * Description:	Retrieves details of all the songs from the database and returns the data to the service layer.
+	 * Return Type:	List
+	 */
 
 	@Override
 	public List<SongMasterDTO> loadAllSongs() throws MediaException {
@@ -75,6 +105,13 @@ public class MediaDAOImpl implements IMediaDAO {
 		}
 	}
 
+	/**
+	 * Method Name:	insertComposer
+	 * Description:	Adds the Composer and its details into the database and returns the result to the service layer.
+	 * Return Type:	ComposerMasterDTO
+	 * @param:	ComposerMasterDTO composer
+	 */
+
 	@Override
 	public ComposerMasterDTO insertComposer(ComposerMasterDTO composer) throws MediaException {
 		try {
@@ -86,6 +123,13 @@ public class MediaDAOImpl implements IMediaDAO {
 		}
 		return composer;
 	}
+
+	/**
+	 * Method Name:	getComposerById
+	 * Description:	Retrieves a Composer and its details for the given composer id into the database and returns the result to the service layer.
+	 * Return Type:	ComposerMasterDTO
+	 * @param:	int composerId
+	 */
 
 	@Override
 	public ComposerMasterDTO getComposerById(int composerId) throws MediaException {
@@ -99,6 +143,13 @@ public class MediaDAOImpl implements IMediaDAO {
 		}
 		return composer;
 	}
+
+	/**
+	 * Method Name:	updateComposer
+	 * Description:	Performs update operation by updating the details of a composer in the database and returns the result to the service layer.
+	 * Return Type:	ComposerMasterDTO
+	 * @param:	ComposerMasterDTO composerMasterDTO
+	 */
 
 	@Override
 	public ComposerMasterDTO updateComposer(ComposerMasterDTO composerMasterDTO) throws MediaException {
@@ -122,11 +173,11 @@ public class MediaDAOImpl implements IMediaDAO {
 			throw new MediaException(e.getMessage()+" and problems in associating composers to songs.");		}
 	}
 
-	
-
-
-
-	
+	/**
+	 * Method Name: loadAllArtists() 
+	 * Description:	Retrieves details of all the artists from the database and returns the data to the service layer.
+	 * Return Type:	List
+	 */
 
 	@Override
 	public List<ArtistMasterDTO> loadAllArtists() throws MediaException {
@@ -140,6 +191,13 @@ public class MediaDAOImpl implements IMediaDAO {
 			throw new MediaException(e.getMessage()+" and problems in loading all artists.");
 		}
 	}
+
+	/**
+	 * Method Name:	getArtistById
+	 * Description:	Retrieves an artist and its details for the given artist id from the database and returns the result to the service layer.
+	 * Return Type:	ArtistMasterDTO
+	 * @param:	int artistId
+	 */
 
 	@Override
 	public ArtistMasterDTO getArtistById(int artistId) throws MediaException {
@@ -157,6 +215,13 @@ public class MediaDAOImpl implements IMediaDAO {
 		return artistMasterDTO;
 	}
 
+	/**
+	 * Method Name:	deleteArtist
+	 * Description:	Finds an artist and its details for the given artist id and deletes it from the database and returns the result to the service layer.
+	 * Return Type:	ArtistMasterDTO
+	 * @param:	int artistId
+	 */
+
 	@Override
 	public ArtistMasterDTO deleteArtist(int artistId) throws MediaException {
 		ArtistMasterDTO artistMasterDTO = entityManager.find(
@@ -170,10 +235,18 @@ public class MediaDAOImpl implements IMediaDAO {
 		return artistMasterDTO;
 	}
 
+	/**
+	 * Method name: artistSongAssoc
+	 * Description: Inserts the associated artists and songs into the database and returns the result to the service layer.
+	 * Return type: void
+	 * @param: ArtistSongAssoc artistSongAssoc
+	 */
+
+
 
 	@Override
 	public void artistSongAssoc(ArtistSongAssoc artistSongAssoc) throws MediaException {
-		// TODO Auto-generated method stub
+
 		System.out.println("h1");
 		try {
 			entityManager.persist(artistSongAssoc);
@@ -184,6 +257,13 @@ public class MediaDAOImpl implements IMediaDAO {
 			throw new MediaException(e.getMessage()+" and problems in associating songs to artist..");
 		}
 	}
+
+	/**
+	 * Method name: getComposerSongs
+	 * Description: Retrieves the associated composer and songs for the given composer id from the database and returns the result to the service layer.
+	 * Return type: List
+	 * @param: int composerId
+	 */
 
 	@Override
 	public List<ComposerSongAssoc> getComposerSongs(int composerId) throws MediaException {
@@ -198,10 +278,15 @@ public class MediaDAOImpl implements IMediaDAO {
 			// TODO Auto-generated catch block
 			throw new MediaException(e.getMessage()+" and problems in loading composers and song list.");
 		}
-		
+
 	}
 
-	
+	/**
+	 * Method Name:	insertArtist
+	 * Description:	Adds the Artist and its details into the database and returns the result to the service layer.
+	 * Return Type:	ArtistMasterDTO
+	 * @param:	ArtistMasterDTO artistMasterDTO
+	 */
 
 	@Override
 	public ArtistMasterDTO insertArtist(ArtistMasterDTO artistMasterDTO) {
@@ -209,6 +294,13 @@ public class MediaDAOImpl implements IMediaDAO {
 		entityManager.flush();
 		return artistMasterDTO;
 	}
+
+	/**
+	 * Method Name:	updateArtist
+	 * Description:	Performs update operation by updating the details of a artist in the database and returns the result to the service layer.
+	 * Return Type:	ArtistMasterDTO
+	 * @param:	ArtistMasterDTO artistMasterDTO
+	 */
 
 	@Override
 	public ArtistMasterDTO updateArtist(ArtistMasterDTO artistMasterDTO) {
@@ -218,10 +310,17 @@ public class MediaDAOImpl implements IMediaDAO {
 
 	}
 
+	/**
+	 * Method name: listAllSongsForComposer
+	 * Description: Retrieves a song from the database for a given song id and returns the result to the service layer.
+	 * Return type: SongMasterDTO
+	 * @param: int songId
+	 */
+
 	@Override
 	public SongMasterDTO listAllSongsForComposer(int songId) throws MediaException {
 		// TODO Auto-generated method stub
-		
+
 		TypedQuery<SongMasterDTO> query = entityManager.createQuery(
 				"select songMasterDTO from SongMasterDTO songMasterDTO where songMasterDTO.songId=:psongId",
 				SongMasterDTO.class);
@@ -234,6 +333,13 @@ public class MediaDAOImpl implements IMediaDAO {
 		}
 
 	}
+
+	/**
+	 * Method name: getArtistSongs
+	 * Description: Retrieves the associated artist and songs for the given artist id from the database and returns the result to the service layer.
+	 * Return type: List
+	 * @param: int artistId
+	 */
 
 	@Override
 	public List<ArtistSongAssoc> getArtistSongs(int artistId) throws MediaException {
@@ -250,9 +356,16 @@ public class MediaDAOImpl implements IMediaDAO {
 		}
 	}
 
+	/**
+	 * Method name: checkPassword
+	 * Description: Validates the password when it is entered the second time and returns the result to the service layer.
+	 * Return type: ModelAndView
+	 * @param: UserMasterDTO userMasterDTO
+	 */
+
 	@Override
 	public ModelAndView checkPassword(UserMasterDTO userMasterDTO) throws MediaException {
-		// TODO Auto-generated method stub
+
 		try {
 			entityManager.persist(userMasterDTO);
 			entityManager.flush();

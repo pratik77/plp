@@ -21,30 +21,36 @@ import com.cg.mp.exception.MediaException;
 import com.cg.mp.service.IMediaService;
 
 /**
- * 
- * @author pratiksa
- *
+ * File name: MediaController
+ * Package name: com.cg.mp.controller
+ * Description:	Controller which handles the user request and navigate to respective jsp pages.
+ * Version: 	1.0
+ * Restrictions:N/A
+ * @author pratiksa,sayush,rauagarw,sapsaha
+ * Date: 13/11/2017
  */
+
 @Controller
 public class MediaController {
 
 	@Autowired
 	private IMediaService mediaService;
 
-	List<ComposerMasterDTO> composers = new ArrayList();
-	List<SongMasterDTO> songs = new ArrayList();
-	List<ArtistMasterDTO> artists = new ArrayList();
+	List<ComposerMasterDTO> composers = new ArrayList<>();
+	List<SongMasterDTO> songs = new ArrayList<>();
+	List<ArtistMasterDTO> artists = new ArrayList<>();
 	String userFlag, message = "";
 	ModelAndView checkPassword;
 
 	int userId;
 
 	/**
-	 * 
+	 * Method name: checkLogin
+	 * Description: This method will navigate the user to the Login page.
 	 * @param username
 	 * @param password
 	 * @param model
-	 * @return
+	 * @return Type: String
 	 */
 
 	@RequestMapping(value = "/login.obj")
@@ -64,6 +70,13 @@ public class MediaController {
 		return userFlag;
 
 	}
+
+	/**
+	 * Method name: createAnAccount
+	 * Description: This method will allow the user to sign Up and navigates to createAnAccount page
+	 * @param model
+	 * @return ytpe: String
+	 */
 
 	@RequestMapping(value = "/createAnAccount.obj")
 	public String createAnAccount(Model model) {
@@ -85,8 +98,15 @@ public class MediaController {
 
 	}
 
+	/**
+	 * Method name: composerSelect
+	 * Description: This method gets the entire composer list present and navigates to ShowComposer page.
+	 * @param model
+	 * @return type: String
+	 */
+
 	@RequestMapping(value = "/retrieveAllComposer.obj")
-	public String compSelect(Model model) {
+	public String composerSelect(Model model) {
 		List<ComposerMasterDTO> composerList;
 		try {
 			composerList = mediaService.loadAllComposer();
@@ -100,6 +120,18 @@ public class MediaController {
 		model.addAttribute("composerMasterDTO", new ComposerMasterDTO());
 		return "ShowComposer";
 	}
+
+	/**
+	 * Method name: modifyAndDeleteComposer
+	 * Description: This method allows the admin to either delete or modify the composer details
+	 * 1.When the admin clicks Modify, method navigates to Modify Composer
+	 * 2.When the admin clicks Delete, method navigates to Delete Composer
+	 * @param submit
+	 * @param composerId
+	 * @param composerMasterDTO
+	 * @param model
+	 * @return type: String
+	 */
 
 	@RequestMapping(value = "/modifyOrDelete.obj")
 	public String modifyAndDeleteComposer(
@@ -144,6 +176,13 @@ public class MediaController {
 
 	}
 
+	/**
+	 * Method name: addComposer
+	 * Description: This method navigates the admin to the AddComposer page.
+	 * @param model
+	 * @return type: String
+	 */
+
 	@RequestMapping(value = "/insertComposer.obj")
 	public String add(Model model) {
 		LocalDate ldate = LocalDate.now();
@@ -152,6 +191,13 @@ public class MediaController {
 		model.addAttribute("composer", new ComposerMasterDTO());
 		return "AddComposer";
 	}
+
+	/**
+	 * Method name: saveComposer
+	 * Description: This method allows the admin to add a composer to the list and finally navigates to the success page after successfully adding the composer.
+	 * @param model
+	 * @return type: String
+	 */
 
 	@RequestMapping(value = "/addComposer.obj")
 	public String save(@ModelAttribute("composer") ComposerMasterDTO composer,
@@ -166,7 +212,7 @@ public class MediaController {
 			ComposerMasterDTO composerCheck = mediaService
 					.insertComposer(composer);
 		} catch (MediaException e) {
-			// TODO Auto-generated catch block
+
 			model.addAttribute("message", e.getMessage());
 			return "mediaError";
 		}
@@ -175,6 +221,14 @@ public class MediaController {
 						+ " added successfully!");
 		return "successComposer";
 	}
+
+	/**
+	 * Method name: modifyComposer
+	 * Description: This method helps to update the modified details of the composer and finally navigates to the success page after successfully updating the composer.
+	 * @param composerMasterDTO
+	 * @param model
+	 * @return type: String
+	 */
 
 	@RequestMapping(value = "/insertModifiedComposer.obj", method = RequestMethod.POST)
 	public String modifyComposer(
@@ -201,6 +255,13 @@ public class MediaController {
 		return "successComposer";
 	}
 
+	/**
+	 * Method name: artistSelect
+	 * Description: This method gets the entire artist list present and navigates to ShowArtist page.
+	 * @param model
+	 * @return type: String
+	 */
+
 	@RequestMapping(value = "/retrieveAllArtist.obj")
 	public String artistSelect(Model model) {
 		List<ArtistMasterDTO> artistList;
@@ -217,20 +278,31 @@ public class MediaController {
 		return "ShowArtist";
 	}
 
+	/**
+	 * Method name: modifyOrDeleteArtist
+	 * Description: This method allows the admin to either delete or modify the artist details
+	 * 1.When the admin clicks Modify, method navigates to Modify Artist
+	 * 2.When the admin clicks Delete, method navigates to Delete Artist
+	 * @param submit
+	 * @param artistId
+	 * @param artistMasterDTO
+	 * @param model
+	 * @return type: String
+	 */
+
 	@RequestMapping(value = "/modifyOrDeleteArtist.obj")
 	public String artistSelect(@RequestParam("submit") String submit,
 			@RequestParam("artistId") int artistId,
 			@ModelAttribute("artistMasterDTO") ArtistMasterDTO artistMasterDTO,
 			Model model) {
-
-		if (("delete").equals(submit)) {
+			if (("delete").equals(submit)) {
 			try {
 				artistMasterDTO = mediaService.getArtistById(artistId);
 				model.addAttribute("artistMasterDTO", artistMasterDTO);
 				artistMasterDTO = mediaService.deleteArtist(artistId);
 				artists = mediaService.loadAllArtists();
 			} catch (MediaException e) {
-				// TODO Auto-generated catch block
+
 				model.addAttribute("message", e.getMessage());
 				return "mediaError";
 			}
@@ -248,7 +320,7 @@ public class MediaController {
 				model.addAttribute("sqlDate",sqlDate);
 				artistMasterDTO = mediaService.getArtistById(artistId);
 			} catch (MediaException e) {
-				// TODO Auto-generated catch block
+
 				model.addAttribute("message", e.getMessage());
 				return "mediaError";
 			}
@@ -257,6 +329,14 @@ public class MediaController {
 		}
 		return "ShowArtist";
 	}
+
+	/**
+	 * Method name: modifyArtist
+	 * Description: This method helps to update the modified details of the artist and finally navigates to the success page after successfully updating the artist.
+	 * @param artistMasterDTO
+	 * @param model
+	 * @return type: String
+	 */
 
 	@RequestMapping(value = "/insertModifiedArtist.obj", method = RequestMethod.POST)
 	public String modifyArtist(
@@ -283,6 +363,13 @@ public class MediaController {
 		return "successArtist";
 	}
 
+	/**
+	 * Method name: addArtist
+	 * Description: This method navigates the artist to the AddArtist page.
+	 * @param model
+	 * @return type: String
+	 */
+
 	@RequestMapping("/insertArtist.obj")
 	public String addArtist(Model model) {
 		LocalDate ldate = LocalDate.now();
@@ -291,6 +378,14 @@ public class MediaController {
 		model.addAttribute("artistMasterDTO", new ArtistMasterDTO());
 		return "AddArtist";
 	}
+
+	/**
+	 * Method name: saveArtist
+	 * Description: This method allows the admin to add a artist to the list and finally navigates to the success page after successfully adding the artist.
+	 * @param artistMasterDTO
+	 * @param model
+	 * @return type: String
+	 */
 
 	@RequestMapping(value = "/addArtist.obj", method = RequestMethod.POST)
 	public String saveArtist(
@@ -317,6 +412,13 @@ public class MediaController {
 		return "successArtist";
 	}
 
+	/**
+	 * Method name: retrieveArtistSong
+	 * Description: This method gets the artist and the songs list and navigates to artistSongAssoc.
+	 * @param model
+	 * @return type: String
+	 */
+
 	@RequestMapping(value = "/retrieveArtistSong.obj")
 	public String retrieveArtistSong(Model model)
 
@@ -335,6 +437,15 @@ public class MediaController {
 		return "artistSongAssoc";
 	}
 
+	/**
+	 * Method name: compSongAssoc
+	 * Description: This method allows the admin to associate songs to the composer and finally navigates to composerSongAssocSuccess.
+	 * @param composerId
+	 * @param songIdList
+	 * @param model
+	 * @return type: String
+	 */
+
 	@RequestMapping(value = "/composerSongAssoc.obj")
 	public String compSongAssoc(@RequestParam("composerSelect") int composerId,
 			@RequestParam("songSelect") int[] songIdList, Model model) {
@@ -352,6 +463,15 @@ public class MediaController {
 				"Composer and songs associated successfully");
 		return "composerSongAssocSuccess";
 	}
+
+	/**
+	 * Method name: artistSongAssoc
+	 * Description: This method allows the admin to associate songs to the artist and finally navigates to artistSongAssocSuccess page.
+	 * @param artistId
+	 * @param songIdList
+	 * @param model
+	 * @return type: String
+	 */
 
 	@RequestMapping(value = "/artistSongAssoc.obj")
 	public String artistSongAssoc(@RequestParam("artistSelect") int artistId,
@@ -373,6 +493,13 @@ public class MediaController {
 		return "artistSongAssocSuccess";
 	}
 
+
+	/**
+	 * Method name: retrieveCompSong
+	 * Description: This method gets the composer and the songs list and navigates to composerSongAssoc page.
+	 * @param model
+	 * @return type: String
+	 */
 	@RequestMapping(value = "/retrieveComposerSong.obj")
 	public String retrieveCompSong(Model model) {
 
@@ -389,13 +516,22 @@ public class MediaController {
 		return "composerSongAssoc";
 	}
 
-	@RequestMapping(value = "/retrieveComposerListForSongs.obj")
+
+	
+	/**
+	 * Method name: retrieveComposerListForSongs
+	 * Description: This method retrieves the composer list from the database and navigates it to the retrieveComposerListForSongs page.
+	 * @param model
+	 * @return type: String
+	 */
+
+	@RequestMapping(value="/retrieveComposerListForSongs.obj")
 	public String retrieveComposerListForSongs(Model model) {
 
 		try {
 			composers = mediaService.loadAllComposer();
 		} catch (MediaException e) {
-			// TODO Auto-generated catch block
+
 			model.addAttribute("message", e.getMessage());
 			return "mediaError";
 		}
@@ -403,14 +539,24 @@ public class MediaController {
 		return "retrieveComposerListForSongs";
 	}
 
-	@RequestMapping(value = "/listSongsForComposer.obj")
-	public String listSongsForComposer(
-			@RequestParam("composerSelect") int composerId, Model model) {
+
+	
+	/**
+	 * Method name: listSongsForComposer
+	 * Description: Retrieves songs for a composer by navigating to the listAllSongsForComposer page.
+	 * @param composerId
+	 * @param model
+	 * @return
+	 */
+
+	@RequestMapping(value="/listSongsForComposer.obj")
+	public String listSongsForComposer(@RequestParam("composerSelect")int composerId,Model model) {
+
 
 		try {
 			songs = mediaService.listAllSongsForComposer(composerId);
 		} catch (MediaException e) {
-			// TODO Auto-generated catch block
+
 			model.addAttribute("message", e.getMessage());
 			return "mediaError";
 		}
@@ -418,7 +564,15 @@ public class MediaController {
 		return "listAllSongsForComposer";
 	}
 
-	@RequestMapping(value = "/retrieveArtistListForSongs.obj")
+
+	/**
+	 * Method name: retrieveArtistListForSongs
+	 * Description: This method retrieves the artist list from the database and navigates it to the retrieveArtistListForSongs page.
+	 * @param model
+	 * @return
+	 */
+
+	@RequestMapping(value="/retrieveArtistListForSongs.obj")
 	public String retrieveArtistListForSongs(Model model) {
 
 		try {
@@ -432,9 +586,17 @@ public class MediaController {
 		return "retrieveArtistListForSongs";
 	}
 
-	@RequestMapping(value = "/listSongsForArtist.obj")
-	public String listSongsForArtist(
-			@RequestParam("artistSelect") int artistId, Model model) {
+
+	/**
+	 * Method name: listSongsForArtist
+	 * Description: Retrieves songs for a artist by navigating to the listAllSongsForArtist page.
+	 * @param artistId
+	 * @param model
+	 * @return
+	 */
+
+	@RequestMapping(value="/listSongsForArtist.obj")
+	public String listSongsForArtist(@RequestParam("artistSelect")int artistId,Model model) {
 
 		try {
 			songs = mediaService.listAllSongsForArtist(artistId);

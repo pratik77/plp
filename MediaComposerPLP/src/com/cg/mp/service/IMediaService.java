@@ -9,6 +9,16 @@ import com.cg.mp.dto.ComposerMasterDTO;
 import com.cg.mp.dto.SongMasterDTO;
 import com.cg.mp.exception.MediaException;
 
+/**
+ * File name: IMediaService
+ * Package name: com.cg.mp.service
+ * Description:	Consists of all the Method Declarations of those methods present in MediaServiceImpl.java 		
+ * Version: 	1.0
+ * Restrictions:	N/A
+ * @author rauagarw,pratiksa,sayush,sapsaha
+ * Date: 13/11/2017
+ */
+
 public interface IMediaService {
 	List<ComposerMasterDTO> loadAllComposer() throws MediaException;
 

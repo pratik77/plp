@@ -1,18 +1,48 @@
 package com.cg.mp.dto;
 
+
+/**
+ * File name: ArtistSongAssoc
+ * Package name: com.cg.mp.dto
+ * Description:This is a POJO class which provides getters and setters for Artist Song Association
+ * Version: 	1.0
+ * Restrictions:N/A
+ * @author pratiksa,sayush,rauagarw,sapsaha
+ * Date: 13/11/2017
+ */
+
+
 import java.sql.Date;
+
+/**
+ * File name: ArtistSongAssoc
+ * Package name: com.cg.mp.dto
+ * Description:This is a POJO class which provides getters and setters for Artist Song Association
+ * Version: 	1.0
+ * Restrictions:N/A
+ * @author pratiksa,sayush,rauagarw,
+ * Date: 13/11/2017
+ */
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 @Entity
 @Table(name="ARTIST_SONG_ASSOC")
 public class ArtistSongAssoc {
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="ASSOCIATION_ID")
+	private int associationId;
+	
 	@Column(name="ARTIST_ID")
 	private int artistId;
-	@Id
+
 	@Column(name="SONG_ID")
 	private int songId;
 	
@@ -28,6 +58,9 @@ public class ArtistSongAssoc {
 	@Column(name="UPDATED_ON")
 	private Date updatedOn;
 	
+	/**
+	 * Getter Setter Methods for ArtistSongAssoc
+	 */
 	
 	public int getArtistId() {
 		return artistId;
