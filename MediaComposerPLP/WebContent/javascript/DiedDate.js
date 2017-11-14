@@ -10,19 +10,19 @@ $(function() {
 });
 
 function validateDiedDate() {
-	if (document.form.composerBornDate.value < document.form.composerDiedDate.value){
+
+	if (document.form.composerBornDate.value < document.form.composerDiedDate.value) {
 		return true;
-	} else {
-		alert("Died Date should be After Born Date");
-		return false;
 	}
+	alert("Died Date should be After Born Date");
+	return false;
 }
 
 function validateArtistDiedDate() {
-	if (document.form.artistBornDate.value < document.form.artistDiedDate.value){
+	if (document.form.artistBornDate.value < document.form.artistDiedDate.value
+			|| document.form.artistDiedDate.value == "") {
 		return true;
-	} else {
-		alert("Died Date should be After Born Date");
-		return false;
 	}
+	alert("Died Date should be After Born Date");
+	return false;
 }

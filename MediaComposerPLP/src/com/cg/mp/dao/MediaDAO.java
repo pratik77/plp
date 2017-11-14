@@ -22,7 +22,7 @@ import com.cg.mp.exception.MediaException;
  * Date: 13/11/2017
  */
 
-public interface IMediaDAO {
+public interface MediaDAO {
 
 	List<ComposerMasterDTO> loadAllComposer() throws MediaException;
 
