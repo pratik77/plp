@@ -1,9 +1,12 @@
 package com.cg.mp.service;
 
+
+
 import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.TreeSet;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -159,7 +162,6 @@ public class MediaServiceImpl implements MediaService {
 	 */
 	@Override
 	public ArtistMasterDTO getArtistById(int artistId) throws MediaException {
-
 		return mediaDAO.getArtistById(artistId);
 	}
 
@@ -172,7 +174,6 @@ public class MediaServiceImpl implements MediaService {
 	 */
 	@Override
 	public ArtistMasterDTO deleteArtist(int artistId) throws MediaException {
-
 		return mediaDAO.deleteArtist(artistId);
 	}
 
@@ -207,17 +208,18 @@ public class MediaServiceImpl implements MediaService {
 	 * @param: int composerId
 	 */
 	@Override
-	public List<SongMasterDTO> listAllSongsForComposer(int composerId)
+	public TreeSet<SongMasterDTO> listAllSongsForComposer(int composerId)
 			throws MediaException {
 		// TODO Auto-generated method stub
 		composerSongs = mediaDAO.getComposerSongs(composerId);
-		List<SongMasterDTO> songs = new ArrayList();
+		TreeSet<SongMasterDTO> songs = new TreeSet<SongMasterDTO>(new SongMasterDTO());
 		for (ComposerSongAssoc composerSongAssoc : composerSongs) {
 			SongMasterDTO songMaster = new SongMasterDTO();
 			songMaster = mediaDAO.listAllSongsForComposer(composerSongAssoc
 					.getSongId());
 			songs.add(songMaster);
 		}
+		
 		return songs;
 	}
 
@@ -256,11 +258,11 @@ public class MediaServiceImpl implements MediaService {
 	 * @param: int artistId
 	 */
 	@Override
-	public List<SongMasterDTO> listAllSongsForArtist(int artistId)
+	public TreeSet<SongMasterDTO> listAllSongsForArtist(int artistId)
 			throws MediaException {
 		// TODO Auto-generated method stub
 		artistSongs = mediaDAO.getArtistSongs(artistId);
-		List<SongMasterDTO> songs = new ArrayList();
+		TreeSet<SongMasterDTO> songs = new TreeSet<SongMasterDTO>(new SongMasterDTO());
 		for (ArtistSongAssoc artistSongAssoc : artistSongs) {
 			SongMasterDTO songMaster = new SongMasterDTO();
 			songMaster = mediaDAO.listAllSongsForComposer(artistSongAssoc
@@ -293,6 +295,9 @@ public class MediaServiceImpl implements MediaService {
 					"password does not match");
 	}
 
+	/**
+	 * 
+	 */
 	@Override
 	public List<SongMasterDTO> listAllSongs() throws MediaException {
 		// TODO Auto-generated method stub

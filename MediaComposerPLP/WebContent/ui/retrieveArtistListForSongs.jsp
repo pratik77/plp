@@ -34,20 +34,20 @@
 						<th>Artist Type</th>
 						<th>Artist Born Date</th>
 						<th>Artist Died Date</th>
+					</tr>
+
+
+					<c:forEach items="${artists}" var="artist">
+						<tr>
+
+							<td><input type="radio" name="artistSelect"
+								value="${artist.artistId }" required />${artist.artistId}</td>
+							<td>${artist.artistName }</td>
+							<td>${artist.artistType }</td>
+							<td>${artist.artistBornDate }</td>
+							<td>${artist.artistDiedDate }</td>
 						</tr>
-
-
-						<c:forEach items="${artists}" var="artist">
-							<tr>
-
-								<td><input type="radio" name="artistSelect"
-									value="${artist.artistId }" required />${artist.artistId}</td>
-								<td>${artist.artistName }</td>
-								<td>${artist.artistType }</td>
-								<td>${artist.artistBornDate }</td>
-								<td>${artist.artistDiedDate }</td>
-							</tr>
-						</c:forEach>
+					</c:forEach>
 				</table>
 				<br> <input type="submit" value="Show Songs"><br>
 				Click on the radio button to select artist and submit to see song

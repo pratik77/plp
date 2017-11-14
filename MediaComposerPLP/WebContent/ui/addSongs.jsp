@@ -30,7 +30,8 @@
 				method="post">
 
 				<form:label path="songName">Song Name:</form:label>
-				<form:input path="songName" required="true" pattern="[A-Za-z0-9]{1}[A-Za-z0-9]{0,}"/>
+				<form:input path="songName" required="true"
+					pattern="[A-Za-z0-9]{1}[A-Za-z0-9]{0,}" />
 				<br />
 
 				<form:label path="songDuration">Song Duration:</form:label>

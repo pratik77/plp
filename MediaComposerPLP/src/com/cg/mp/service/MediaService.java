@@ -1,6 +1,7 @@
 package com.cg.mp.service;
 
 import java.util.List;
+import java.util.TreeSet;
 
 import org.springframework.web.servlet.ModelAndView;
 
@@ -46,9 +47,9 @@ public interface MediaService {
 
 	void artistSongAssoc(int artistId, int[] songIdList, int userId) throws MediaException;
 
-	List<SongMasterDTO> listAllSongsForComposer(int composerId) throws MediaException;
+	TreeSet<SongMasterDTO> listAllSongsForComposer(int composerId) throws MediaException;
 
-	List<SongMasterDTO> listAllSongsForArtist(int artistId) throws MediaException;
+	TreeSet<SongMasterDTO> listAllSongsForArtist(int artistId) throws MediaException;
 
 	ModelAndView checkPassword(String password, String cpassword) throws MediaException;
 

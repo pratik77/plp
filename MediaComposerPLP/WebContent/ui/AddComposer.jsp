@@ -30,8 +30,9 @@
 		</div>
 		<div class="side-nav1">
 			<h1>Enter Composer Details</h1>
-			<form:form name="form" action="addComposer.obj" modelAttribute="composer"
-				method="post" onsubmit="return validateDiedDate()">
+			<form:form name="form" action="addComposer.obj"
+				modelAttribute="composer" method="post"
+				onsubmit="return validateDiedDate()">
 
 				<form:label path="composerName">Composer Name:</form:label>
 				<form:input path="composerName" pattern="[A-Za-z]{1}[A-Za-z ]{0,}"
@@ -39,8 +40,8 @@
 				<br />`
 
 		<form:label path="composerBornDate">Composer Birth Date:</form:label>
-				<form:input type="date" name="composerBornDate" path="composerBornDate" max="${sqlDate}"
-					required="true" />
+				<form:input type="date" name="composerBornDate"
+					path="composerBornDate" max="${sqlDate}" required="true" />
 				<br />
 
 				<div class="row">
@@ -54,7 +55,8 @@
 
 				<div class="row" id="row_dim">
 					<form:label path="composerDiedDate">Composer Death Date:</form:label>
-					<form:input type="date" name="composerDiedDate" max="${sqlDate}"  path="composerDiedDate" />
+					<form:input type="date" name="composerDiedDate" max="${sqlDate}"
+						path="composerDiedDate" />
 					<br />
 				</div>
 

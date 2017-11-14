@@ -25,9 +25,7 @@
 		</div>
 		<div class="side-nav1">
 			<h1>${message }</h1>
-			<br>
-			<br>
-			<br>
+			<br> <br> <br>
 		</div>
 	</div>
 </body>

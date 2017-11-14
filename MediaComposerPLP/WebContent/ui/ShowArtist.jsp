@@ -50,7 +50,7 @@
 							<tr>
 
 								<td><form:radiobutton path="artistId"
-										value="${artist.artistId }" required="true"/>${artist.artistId }</td>
+										value="${artist.artistId }" required="true" />${artist.artistId }</td>
 
 								<td>${artist.artistName }</td>
 								<td>${artist.artistType }</td>

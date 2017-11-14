@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.TreeSet;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -194,8 +195,8 @@ public class MediaController {
 	 * @return type: String
 	 */
 	@RequestMapping(value = "/addComposer.obj")
-	public String saveComposer(@ModelAttribute("composer") ComposerMasterDTO composer,
-			Model model) {
+	public String saveComposer(
+			@ModelAttribute("composer") ComposerMasterDTO composer, Model model) {
 		composer.setCreatedBy(userId);
 		composer.setUpdatedBy(userId);
 		LocalDate ldate = LocalDate.now();
@@ -542,6 +543,7 @@ public class MediaController {
 	@RequestMapping(value = "/listSongsForComposer.obj")
 	public String listSongsForComposer(
 			@RequestParam("composerSelect") int composerId, Model model) {
+		TreeSet<SongMasterDTO> songs = new TreeSet<SongMasterDTO>();
 		try {
 			songs = mediaService.listAllSongsForComposer(composerId);
 		} catch (MediaException e) {
@@ -585,6 +587,7 @@ public class MediaController {
 	@RequestMapping(value = "/listSongsForArtist.obj")
 	public String listSongsForArtist(
 			@RequestParam("artistSelect") int artistId, Model model) {
+		TreeSet<SongMasterDTO> songs = new TreeSet<SongMasterDTO>();
 		try {
 			songs = mediaService.listAllSongsForArtist(artistId);
 		} catch (MediaException e) {
@@ -596,6 +599,13 @@ public class MediaController {
 		return "listAllSongsForArtist";
 	}
 
+	/**
+	 * Method name: retrieveSongs Description: Retrieves all songs from the
+	 * database and displays it on retrieveSongs.jsp.
+	 * 
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping(value = "/retrieveSongs.obj")
 	public String retrieveSongs(Model model) {
 
@@ -616,13 +626,27 @@ public class MediaController {
 		}
 	}
 
+	/**
+	 * Method name: insertSongs Description: This method sends an empty object
+	 * of SongMasterDTO class to addSongs.jsp
+	 * 
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping(value = "/insertSongs.obj")
 	public String insertSongs(Model model) {
-
 		model.addAttribute("songMasterDTO", new SongMasterDTO());
 		return "addSongs";
 	}
 
+	/**
+	 * Method name: addSongs Description: This method redirects to
+	 * addSongsSuccess and display the success message of insertion of song
+	 * 
+	 * @param songMasterDTO
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping(value = "/addSongs.obj")
 	public String addSongs(
 			@ModelAttribute("songMasterDTO") SongMasterDTO songMasterDTO,
@@ -639,6 +663,14 @@ public class MediaController {
 		return "addSongsSuccess";
 	}
 
+	/**
+	 * Method name: deleteSong Description: This method deletes a song from the
+	 * database and displays success page on retrieveSongs.jsp page
+	 * 
+	 * @param songMasterDTO
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping(value = "/deleteSong.obj")
 	public String deleteSong(
 			@ModelAttribute("songMasterDTO") SongMasterDTO songMasterDTO,

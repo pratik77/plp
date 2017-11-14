@@ -23,7 +23,9 @@
 				Composer</a><br> <a href="retrieveArtistListForSongs.obj">Show
 				songs sung by Artist</a><br>
 		</div>
-		<div class="side-nav1"><h1>${message}</h1></div>
+		<div class="side-nav1">
+			<h1>${message}</h1>
+		</div>
 	</div>
 </body>
 </html>

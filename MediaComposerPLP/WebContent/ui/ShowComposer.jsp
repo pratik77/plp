@@ -49,7 +49,7 @@
 							<tr>
 
 								<td><form:radiobutton path="composerId"
-										value="${composer.composerId }" required="true"/>${composer.composerId}</td>
+										value="${composer.composerId }" required="true" />${composer.composerId}</td>
 								<td>${composer.composerName }</td>
 								<td>${composer.composerBornDate }</td>
 								<td>${composer.composerDiedDate }</td>
@@ -73,8 +73,7 @@
 				</form:form>
 
 			</table>
-			<br> <a href="insertComposer.obj">Add New Composer</a>
-			<br>${message}
+			<br> <a href="insertComposer.obj">Add New Composer</a> <br>${message}
 		</div>
 	</div>
 </body>

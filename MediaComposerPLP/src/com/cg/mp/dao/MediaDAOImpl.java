@@ -18,6 +18,7 @@ import com.cg.mp.dto.ComposerSongAssoc;
 import com.cg.mp.dto.SongMasterDTO;
 import com.cg.mp.dto.UserMasterDTO;
 import com.cg.mp.exception.MediaException;
+import com.cg.mp.util.QueryMapper;
 
 /**
  * File name: MediaDAOImpl Package name: com.cg.mp.dao Description:
@@ -48,8 +49,7 @@ public class MediaDAOImpl implements MediaDAO {
 	public int checkLogin(int username, String password) throws MediaException {
 		TypedQuery<UserMasterDTO> query = entityManager
 				.createQuery(
-						"SELECT userMasterDTO FROM UserMasterDTO "
-								+ "userMasterDTO WHERE userMasterDTO.userId=:puserId AND userMasterDTO.userPassword=:puserPassword",
+						QueryMapper.query1,
 						UserMasterDTO.class);
 		query.setParameter("puserId", username);
 		query.setParameter("puserPassword", password);
@@ -74,7 +74,7 @@ public class MediaDAOImpl implements MediaDAO {
 	@Override
 	public List<ComposerMasterDTO> loadAllComposer() throws MediaException {
 		TypedQuery<ComposerMasterDTO> query = entityManager.createQuery(
-				"select c from ComposerMasterDTO c", ComposerMasterDTO.class);
+				QueryMapper.query2, ComposerMasterDTO.class);
 		try {
 			return query.getResultList();
 		} catch (Exception e) {
@@ -91,7 +91,7 @@ public class MediaDAOImpl implements MediaDAO {
 	@Override
 	public List<SongMasterDTO> loadAllSongs() throws MediaException {
 		TypedQuery<SongMasterDTO> query = entityManager.createQuery(
-				"select songs from SongMasterDTO songs", SongMasterDTO.class);
+				QueryMapper.query3, SongMasterDTO.class);
 		try {
 			return query.getResultList();
 		} catch (Exception e) {
@@ -185,7 +185,7 @@ public class MediaDAOImpl implements MediaDAO {
 	@Override
 	public List<ArtistMasterDTO> loadAllArtists() throws MediaException {
 		TypedQuery<ArtistMasterDTO> query = entityManager.createQuery(
-				"select a from ArtistMasterDTO a", ArtistMasterDTO.class);
+				QueryMapper.query4, ArtistMasterDTO.class);
 		try {
 			return query.getResultList();
 		} catch (Exception e) {
@@ -206,7 +206,7 @@ public class MediaDAOImpl implements MediaDAO {
 	public ArtistMasterDTO getArtistById(int artistId) throws MediaException {
 		ArtistMasterDTO artistMasterDTO = new ArtistMasterDTO();
 		TypedQuery<ArtistMasterDTO> query = entityManager.createQuery(
-				"select a from ArtistMasterDTO a where a.artistId=:partistId",
+				QueryMapper.query5,
 				ArtistMasterDTO.class);
 		query.setParameter("partistId", artistId);
 		try {
@@ -274,7 +274,7 @@ public class MediaDAOImpl implements MediaDAO {
 		// TODO Auto-generated method stub
 		TypedQuery<ComposerSongAssoc> query = entityManager
 				.createQuery(
-						"select composerSong from ComposerSongAssoc composerSong  where composerSong.composerId=:pcomposerId",
+						QueryMapper.query6,
 						ComposerSongAssoc.class);
 		query.setParameter("pcomposerId", composerId);
 		try {
@@ -328,13 +328,16 @@ public class MediaDAOImpl implements MediaDAO {
 			throws MediaException {
 		TypedQuery<SongMasterDTO> query = entityManager
 				.createQuery(
-						"select songMasterDTO from SongMasterDTO songMasterDTO where songMasterDTO.songId=:psongId",
+						QueryMapper.query7,
 						SongMasterDTO.class);
 		query.setParameter("psongId", songId);
 		try {
 			temp = query.getResultList();
 			if (temp.size() == 0)
-				return null;
+			{
+				SongMasterDTO songMasterDTO=new SongMasterDTO();
+				return songMasterDTO;
+			}	
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			throw new MediaException(e.getMessage()
@@ -356,7 +359,7 @@ public class MediaDAOImpl implements MediaDAO {
 		// TODO Auto-generated method stub
 		TypedQuery<ArtistSongAssoc> query = entityManager
 				.createQuery(
-						"select artistSong from ArtistSongAssoc artistSong  where artistSong.artistId=:partistId",
+						QueryMapper.query8,
 						ArtistSongAssoc.class);
 		query.setParameter("partistId", artistId);
 		try {
@@ -394,7 +397,7 @@ public class MediaDAOImpl implements MediaDAO {
 	public List<SongMasterDTO> listAllSongs() throws MediaException {
 		// TODO Auto-generated method stub
 		TypedQuery<SongMasterDTO> query = entityManager.createQuery(
-				"select songMasterDTO from SongMasterDTO songMasterDTO ",
+				QueryMapper.query9,
 				SongMasterDTO.class);
 		try {
 			return query.getResultList();

@@ -16,8 +16,8 @@
 	</div>
 	<div class="side-nav">
 		<div class="side-nav1">
-			<a href="retrieveAllComposers.obj">Composer</a><br> <a
-				href="retrieveAllArtists.obj">Artist</a><br> <a
+			<a href="retrieveAllComposer.obj">Composers</a><br> <a
+				href="retrieveAllArtist.obj">Artists</a><br> <a
 				href="retrieveSongs.obj">Songs</a><br> <a
 				href="retrieveComposerSong.obj">Composer Song Association</a><br>
 			<a href="retrieveArtistSong.obj">Artist Song Association</a><br>
@@ -28,33 +28,37 @@
 		<div class="side-nav1">
 			<h1>Modify Artist Details</h1>
 			<form:form name="form" action="insertModifiedArtist.obj"
-				modelAttribute="artistMasterDTO" method="post" onsubmit="return validateArtistDiedDate()">
+				modelAttribute="artistMasterDTO" method="post"
+				onsubmit="return validateArtistDiedDate()">
 
 				<form:input type="hidden" path="artistId"
 					value="${artistMasterDTO.artistId}" />
 				<br />
-		
-		<form:label path="artistName">Artist Name:</form:label>
-				<form:input path="artistName" value="${artistMasterDTO.artistName}" pattern="[A-Za-z]{1}[A-Za-z ]{0,}"
-					title="Name should contain alphabets only"
-					required="true" />
+
+				<form:label path="artistName">Artist Name:</form:label>
+				<form:input path="artistName" value="${artistMasterDTO.artistName}"
+					pattern="[A-Za-z]{1}[A-Za-z ]{0,}"
+					title="Name should contain alphabets only" required="true" />
 				<br />
 
-		<form:label path="artistBornDate">Artist Birth Date:</form:label>
+				<form:label path="artistBornDate">Artist Birth Date:</form:label>
 				<form:input type="date" path="artistBornDate"
-					value="${artistMasterDTO.artistBornDate}" max="${sqlDate}" required="true" />
+					value="${artistMasterDTO.artistBornDate}" max="${sqlDate}"
+					required="true" />
 				<br />
 
 				<form:label path="artistDiedDate">Artist Death Date:</form:label>
 				<form:input type="date" path="artistDiedDate"
-					value="${artistMasterDTO.artistDiedDate}" max="${sqlDate}" required="true" />
+					value="${artistMasterDTO.artistDiedDate}" max="${sqlDate}"
+					required="true" />
 				<br />
 
 				<form:label path="artistType">Artist Type:</form:label>
 				<form:radiobutton path="artistType" value="M" required="true" />Male
-				<form:radiobutton path="artistType" value="F"/>Female
+				<form:radiobutton path="artistType" value="F" />Female
 					
-				<br /><br>
+				<br />
+				<br>
 
 				<%-- <form:label path="createdOn">Created On:</form:label>
 				<form:input path="createdOn" value="${artistMasterDTO.createdOn}"

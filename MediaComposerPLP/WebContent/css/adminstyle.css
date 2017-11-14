@@ -15,7 +15,6 @@ body {
 
 .side-nav {
 	clear: both;
-	
 }
 
 .side-nav {
@@ -28,7 +27,7 @@ body {
 	background-color: white;
 	padding-bottom: 100%;
 	margin-bottom: -100%;
-	display:inline-block;
+	display: inline-block;
 }
 
 .side-nav1 form {
@@ -88,34 +87,37 @@ input[type=submit]:hover, input[type=submit]:hover {
 }
 
 #table {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
 }
 
 #table td, #table th {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
+	border: 1px solid #ddd;
+	padding: 8px;
+	text-align: left;
 }
 
-#table tr:nth-child(even){background-color: #f2f2f2;}
+#table tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
 
-#table tr:hover {background-color: #ddd;}
+#table tr:hover {
+	background-color: #ddd;
+}
 
 #table th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: center;
-    background-color: #03A9F4;
-    color: white;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #03A9F4;
+	color: white;
 }
 
 #outPopUp {
-  position: absolute;
-  z-index: 15;
-  top: 50%;
-  left: 50%;
-  margin: -50px 0 0 -150px;
-  
+	position: absolute;
+	z-index: 15;
+	top: 50%;
+	left: 50%;
+	margin: -50px 0 0 -150px;
 }
