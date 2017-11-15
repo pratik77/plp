@@ -52,11 +52,15 @@ public class MediaServiceImpl implements MediaService {
 			throws MediaException {
 		// TODO Auto-generated method stub
 		userFlag = mediaDAO.checkLogin(username, password);
+		
 		if (userFlag == 1)
+		{
 			return "admin";
-		else if (userFlag == 2)
+		}
+		else 
 			return "user";
-		return "../login1";
+		/*else
+			return "../login1";*/
 	}
 
 	/**
