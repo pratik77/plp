@@ -1,0 +1,123 @@
+@charset "ISO-8859-1";
+
+body {
+	font-family: arial, sans-serif;
+}
+
+.header h1 {
+	float: left;
+}
+
+.header a {
+	float: right;
+	margin-top: 20px;
+}
+
+.side-nav {
+	clear: both;
+}
+
+.side-nav {
+	clear: both;
+}
+
+.side-nav1 {
+	float: left;
+	margin: 20px;
+	background-color: white;
+	padding-bottom: 100%;
+	margin-bottom: -100%;
+	display: inline-block;
+}
+
+.side-nav1 form {
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 20px;
+}
+
+a {
+	text-decoration: none;
+	padding: 8px 20px;
+	background: #03A9F4;
+	color: #fff;
+	display: inline-block;
+	margin-bottom: 8px;
+	border-radius: 22px;
+	transition: all 0.1s ease-in-out;
+}
+
+a:hover, a:active {
+	background: #fff;
+	color: #03A9F4;
+}
+
+input[type=text], input[type=date] {
+	width: 90%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+input[type=submit] {
+	width: 48%;
+	background-color: #03A9F4;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+input[type=submit]:hover, input[type=submit]:hover {
+	background-color: #fff;
+	color: #03A9F4;
+}
+
+.side-nav2 {
+	float: left;
+	margin: 20px;
+	background-color: white;
+	padding-bottom: 100%;
+	margin-bottom: -100%;
+}
+
+#table {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+#table td, #table th {
+	border: 1px solid #ddd;
+	padding: 8px;
+	text-align: left;
+}
+
+#table tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+#table tr:hover {
+	background-color: #ddd;
+}
+
+#table th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #03A9F4;
+	color: white;
+}
+
+#outPopUp {
+	position: absolute;
+	z-index: 15;
+	top: 50%;
+	left: 50%;
+	margin: -50px 0 0 -150px;
+}
