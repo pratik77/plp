@@ -1,7 +1,5 @@
 package com.cg.mp.service;
 
-
-
 import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -212,14 +210,15 @@ public class MediaServiceImpl implements MediaService {
 			throws MediaException {
 		// TODO Auto-generated method stub
 		composerSongs = mediaDAO.getComposerSongs(composerId);
-		TreeSet<SongMasterDTO> songs = new TreeSet<SongMasterDTO>(new SongMasterDTO());
+		TreeSet<SongMasterDTO> songs = new TreeSet<SongMasterDTO>(
+				new SongMasterDTO());
 		for (ComposerSongAssoc composerSongAssoc : composerSongs) {
 			SongMasterDTO songMaster = new SongMasterDTO();
 			songMaster = mediaDAO.listAllSongsForComposer(composerSongAssoc
 					.getSongId());
 			songs.add(songMaster);
 		}
-		
+
 		return songs;
 	}
 
@@ -262,7 +261,8 @@ public class MediaServiceImpl implements MediaService {
 			throws MediaException {
 		// TODO Auto-generated method stub
 		artistSongs = mediaDAO.getArtistSongs(artistId);
-		TreeSet<SongMasterDTO> songs = new TreeSet<SongMasterDTO>(new SongMasterDTO());
+		TreeSet<SongMasterDTO> songs = new TreeSet<SongMasterDTO>(
+				new SongMasterDTO());
 		for (ArtistSongAssoc artistSongAssoc : artistSongs) {
 			SongMasterDTO songMaster = new SongMasterDTO();
 			songMaster = mediaDAO.listAllSongsForComposer(artistSongAssoc
@@ -296,7 +296,11 @@ public class MediaServiceImpl implements MediaService {
 	}
 
 	/**
+	 * Method Name: listAllSongs Description: It calls the DAO class to fetch
+	 * all songs details from the database and return it to the controller
+	 * Return type: Arraylist
 	 * 
+	 * @param: no parameters
 	 */
 	@Override
 	public List<SongMasterDTO> listAllSongs() throws MediaException {
@@ -305,6 +309,13 @@ public class MediaServiceImpl implements MediaService {
 		return songs;
 	}
 
+	/**
+	 * Method Name: insertSong Description: It calls the DAO class to persist
+	 * the song details into the database and returns the persisted object to
+	 * the controller Return type: SongMasterDTO object
+	 * 
+	 * @param: songMasterDTO, userId
+	 */
 	@Override
 	public SongMasterDTO insertSong(SongMasterDTO songMasterDTO, int userId)
 			throws MediaException {
@@ -316,12 +327,24 @@ public class MediaServiceImpl implements MediaService {
 		return mediaDAO.insertSong(songMasterDTO);
 	}
 
+	/**
+	 * Method Name: deleteComposer Description: It calls the DAO class to delete
+	 * a composer record from the database and returns composerId to the controller
+	 * Return type: Integer
+	 * @param: composerId
+	 */
 	@Override
 	public ComposerMasterDTO deleteComposer(int composerId)
 			throws MediaException {
 		return mediaDAO.deleteComposer(composerId);
 	}
 
+	/**
+	 * Method Name: deleteSong Description: It calls the DAO class to delete
+	 * a song record from the database and returns songId to the controller
+	 * Return type: integer
+	 * @param: songId
+	 */
 	@Override
 	public SongMasterDTO deleteSong(int songId) throws MediaException {
 		try {

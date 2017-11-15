@@ -47,10 +47,8 @@ public class MediaDAOImpl implements MediaDAO {
 	 */
 	@Override
 	public int checkLogin(int username, String password) throws MediaException {
-		TypedQuery<UserMasterDTO> query = entityManager
-				.createQuery(
-						QueryMapper.query1,
-						UserMasterDTO.class);
+		TypedQuery<UserMasterDTO> query = entityManager.createQuery(
+				QueryMapper.query1, UserMasterDTO.class);
 		query.setParameter("puserId", username);
 		query.setParameter("puserPassword", password);
 		List<UserMasterDTO> users;
@@ -206,8 +204,7 @@ public class MediaDAOImpl implements MediaDAO {
 	public ArtistMasterDTO getArtistById(int artistId) throws MediaException {
 		ArtistMasterDTO artistMasterDTO = new ArtistMasterDTO();
 		TypedQuery<ArtistMasterDTO> query = entityManager.createQuery(
-				QueryMapper.query5,
-				ArtistMasterDTO.class);
+				QueryMapper.query5, ArtistMasterDTO.class);
 		query.setParameter("partistId", artistId);
 		try {
 			artistMasterDTO = query.getSingleResult();
@@ -272,10 +269,8 @@ public class MediaDAOImpl implements MediaDAO {
 	public List<ComposerSongAssoc> getComposerSongs(int composerId)
 			throws MediaException {
 		// TODO Auto-generated method stub
-		TypedQuery<ComposerSongAssoc> query = entityManager
-				.createQuery(
-						QueryMapper.query6,
-						ComposerSongAssoc.class);
+		TypedQuery<ComposerSongAssoc> query = entityManager.createQuery(
+				QueryMapper.query6, ComposerSongAssoc.class);
 		query.setParameter("pcomposerId", composerId);
 		try {
 			return query.getResultList();
@@ -326,18 +321,15 @@ public class MediaDAOImpl implements MediaDAO {
 	@Override
 	public SongMasterDTO listAllSongsForComposer(int songId)
 			throws MediaException {
-		TypedQuery<SongMasterDTO> query = entityManager
-				.createQuery(
-						QueryMapper.query7,
-						SongMasterDTO.class);
+		TypedQuery<SongMasterDTO> query = entityManager.createQuery(
+				QueryMapper.query7, SongMasterDTO.class);
 		query.setParameter("psongId", songId);
 		try {
 			temp = query.getResultList();
-			if (temp.size() == 0)
-			{
-				SongMasterDTO songMasterDTO=new SongMasterDTO();
+			if (temp.size() == 0) {
+				SongMasterDTO songMasterDTO = new SongMasterDTO();
 				return songMasterDTO;
-			}	
+			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			throw new MediaException(e.getMessage()
@@ -357,10 +349,8 @@ public class MediaDAOImpl implements MediaDAO {
 	public List<ArtistSongAssoc> getArtistSongs(int artistId)
 			throws MediaException {
 		// TODO Auto-generated method stub
-		TypedQuery<ArtistSongAssoc> query = entityManager
-				.createQuery(
-						QueryMapper.query8,
-						ArtistSongAssoc.class);
+		TypedQuery<ArtistSongAssoc> query = entityManager.createQuery(
+				QueryMapper.query8, ArtistSongAssoc.class);
 		query.setParameter("partistId", artistId);
 		try {
 			return query.getResultList();
@@ -393,12 +383,18 @@ public class MediaDAOImpl implements MediaDAO {
 		return new ModelAndView("createSuccess", "userMasterDTO", userMasterDTO);
 	}
 
+	/**
+	 * Method name: listAllSongs Description: It fetches all the songs details
+	 * from the database and returns the list to the service layer Return type:
+	 * ArrayList
+	 * 
+	 * @param: no parameters
+	 */
 	@Override
 	public List<SongMasterDTO> listAllSongs() throws MediaException {
 		// TODO Auto-generated method stub
 		TypedQuery<SongMasterDTO> query = entityManager.createQuery(
-				QueryMapper.query9,
-				SongMasterDTO.class);
+				QueryMapper.query9, SongMasterDTO.class);
 		try {
 			return query.getResultList();
 		} catch (Exception e) {
@@ -408,6 +404,13 @@ public class MediaDAOImpl implements MediaDAO {
 		}
 	}
 
+	/**
+	 * Method name: insertSong Description: It persists a song details into the
+	 * database and returns the SongMasterDTO object to the service layer Return
+	 * type: SongMasterDTO songMasterDTO
+	 * 
+	 * @param: SongMasterDTO songMasterDTO
+	 */
 	@Override
 	public SongMasterDTO insertSong(SongMasterDTO songMasterDTO)
 			throws MediaException {
@@ -423,6 +426,13 @@ public class MediaDAOImpl implements MediaDAO {
 		return songMasterDTO;
 	}
 
+	/**
+	 * Method name: deleteComposer Description: It deletes a composer details
+	 * from the database and returns the ComposerMasterDTO object to the service
+	 * layer Return type: ComposerMasterDTO composerMasterDTO
+	 * 
+	 * @param: int composerId
+	 */
 	@Override
 	public ComposerMasterDTO deleteComposer(int composerId)
 			throws MediaException {
@@ -439,6 +449,12 @@ public class MediaDAOImpl implements MediaDAO {
 		return composerMasterDTO;
 	}
 
+	/**
+	 * Method name: deleteSong Description: It deletes a songs details from the
+	 * database and returns SongMasterDTO to the service layer
+	 * Return type: SongMasterDTO songMasterDTO
+	 * @param: songId
+	 */
 	@Override
 	public SongMasterDTO deleteSong(int songId) throws MediaException {
 		SongMasterDTO songMasterDTO = entityManager.find(SongMasterDTO.class,
