@@ -400,7 +400,6 @@ public class MediaController {
 			ArtistMasterDTO artistCheck = mediaService
 					.insertArtist(artistMasterDTO);
 		} catch (MediaException e) {
-			// TODO Auto-generated catch block
 			model.addAttribute("message", e.getMessage());
 			return "mediaError";
 		}

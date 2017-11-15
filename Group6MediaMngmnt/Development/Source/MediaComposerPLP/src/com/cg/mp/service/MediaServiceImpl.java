@@ -1,6 +1,8 @@
 package com.cg.mp.service;
 
 import java.sql.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -83,6 +85,12 @@ public class MediaServiceImpl implements MediaService {
 	@Override
 	public ComposerMasterDTO insertComposer(ComposerMasterDTO composer)
 			throws MediaException {
+		DateFormat df = new SimpleDateFormat("yyyy-mm-dd");
+		String checkDate = df.format(composer.getComposerDiedDate());
+		if("1000-00-01".equalsIgnoreCase(checkDate))
+		{
+			composer.setComposerDiedDate(null);
+		}
 		return mediaDAO.insertComposer(composer);
 	}
 
@@ -237,6 +245,12 @@ public class MediaServiceImpl implements MediaService {
 	@Override
 	public ArtistMasterDTO insertArtist(ArtistMasterDTO artistMasterDTO)
 			throws MediaException {
+		DateFormat df = new SimpleDateFormat("yyyy-mm-dd");
+		String checkDate = df.format(artistMasterDTO.getArtistDiedDate());
+		if("1000-00-01".equalsIgnoreCase(checkDate))
+		{
+			artistMasterDTO.setArtistDiedDate(null);
+		}
 		return mediaDAO.insertArtist(artistMasterDTO);
 	}
 
