@@ -10,5 +10,5 @@ public interface QueryMapper {
 	public static final String query6 = "select composerSong from ComposerSongAssoc composerSong  where composerSong.composerId=:pcomposerId";
 	public static final String query7 = "select songMasterDTO from SongMasterDTO songMasterDTO where songMasterDTO.songId=:psongId";
 	public static final String query8 = "select artistSong from ArtistSongAssoc artistSong  where artistSong.artistId=:partistId";
-	public static final String query9 ="select songMasterDTO from SongMasterDTO songMasterDTO ";
+	public static final String query9 = "select songMasterDTO from SongMasterDTO songMasterDTO ";
 }

@@ -451,8 +451,9 @@ public class MediaDAOImpl implements MediaDAO {
 
 	/**
 	 * Method name: deleteSong Description: It deletes a songs details from the
-	 * database and returns SongMasterDTO to the service layer
-	 * Return type: SongMasterDTO songMasterDTO
+	 * database and returns SongMasterDTO to the service layer Return type:
+	 * SongMasterDTO songMasterDTO
+	 * 
 	 * @param: songId
 	 */
 	@Override

@@ -52,15 +52,13 @@ public class MediaServiceImpl implements MediaService {
 			throws MediaException {
 		// TODO Auto-generated method stub
 		userFlag = mediaDAO.checkLogin(username, password);
-		
-		if (userFlag == 1)
-		{
+
+		if (userFlag == 1) {
 			return "admin";
-		}
-		else 
+		} else if (userFlag == 2)
 			return "user";
-		/*else
-			return "../login1";*/
+
+		return "../login1";
 	}
 
 	/**
@@ -222,7 +220,6 @@ public class MediaServiceImpl implements MediaService {
 					.getSongId());
 			songs.add(songMaster);
 		}
-
 		return songs;
 	}
 
@@ -233,7 +230,6 @@ public class MediaServiceImpl implements MediaService {
 	 * 
 	 * @param: ArtistMasterDTO artistMasterDTO
 	 */
-
 	@Override
 	public ArtistMasterDTO insertArtist(ArtistMasterDTO artistMasterDTO)
 			throws MediaException {
@@ -333,8 +329,9 @@ public class MediaServiceImpl implements MediaService {
 
 	/**
 	 * Method Name: deleteComposer Description: It calls the DAO class to delete
-	 * a composer record from the database and returns composerId to the controller
-	 * Return type: Integer
+	 * a composer record from the database and returns composerId to the
+	 * controller Return type: Integer
+	 * 
 	 * @param: composerId
 	 */
 	@Override
@@ -344,9 +341,10 @@ public class MediaServiceImpl implements MediaService {
 	}
 
 	/**
-	 * Method Name: deleteSong Description: It calls the DAO class to delete
-	 * a song record from the database and returns songId to the controller
-	 * Return type: integer
+	 * Method Name: deleteSong Description: It calls the DAO class to delete a
+	 * song record from the database and returns songId to the controller Return
+	 * type: integer
+	 * 
 	 * @param: songId
 	 */
 	@Override

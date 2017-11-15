@@ -41,9 +41,9 @@ public class MediaTest {
 
 	@Rule
 	public MockitoRule mockitoRule = MockitoJUnit.rule();
-	
+
 	ComposerMasterDTO composer = new ComposerMasterDTO();
-	
+
 	@Test
 	public void testGetComposerById() {
 		ComposerMasterDTO composer = new ComposerMasterDTO();
@@ -71,17 +71,15 @@ public class MediaTest {
 	@Test
 	public void testInsertComposer() throws MediaException {
 		UserMasterDTO user = new UserMasterDTO();
-		stub(mediaDAO.insertComposer(composer))
-				.toReturn(composer);
+		stub(mediaDAO.insertComposer(composer)).toReturn(composer);
 		assertEquals(composer, mediaService.insertComposer(composer));
 		verify(mediaDAO).insertComposer(composer);
 	}
-	
+
 	@Test
 	public void testupdateArtist() throws MediaException {
-		ArtistMasterDTO artist=new ArtistMasterDTO();
-		stub(mediaDAO.updateArtist(artist))
-				.toReturn(artist);
+		ArtistMasterDTO artist = new ArtistMasterDTO();
+		stub(mediaDAO.updateArtist(artist)).toReturn(artist);
 		assertEquals(artist, mediaDAO.updateArtist(artist));
 		verify(mediaDAO).updateArtist(artist);
 	}

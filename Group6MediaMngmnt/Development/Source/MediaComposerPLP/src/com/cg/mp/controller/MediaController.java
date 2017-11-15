@@ -551,6 +551,7 @@ public class MediaController {
 			model.addAttribute("message", e.getMessage());
 			return "mediaError";
 		}
+		model.addAttribute("composerId", composerId);
 		model.addAttribute("songList", songs);
 		return "listAllSongsForComposer";
 	}
@@ -595,6 +596,7 @@ public class MediaController {
 			model.addAttribute("message", e.getMessage());
 			return "mediaError";
 		}
+		model.addAttribute("artistId", artistId);
 		model.addAttribute("songList", songs);
 		return "listAllSongsForArtist";
 	}

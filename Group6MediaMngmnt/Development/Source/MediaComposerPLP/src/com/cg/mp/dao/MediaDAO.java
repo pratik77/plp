@@ -13,13 +13,11 @@ import com.cg.mp.dto.UserMasterDTO;
 import com.cg.mp.exception.MediaException;
 
 /**
- * File name: IMediaDAO
- * Package name: com.cg.mp.dao
- * Description:	Consists of all the Method Declarations of those methods present in MediaDAOImpl.java 		
- * Version: 	1.0
- * Restrictions:	N/A
- * @author rauagarw,pratiksa,sayush,sapsaha
- * Date: 13/11/2017
+ * File name: IMediaDAO Package name: com.cg.mp.dao Description: Consists of all
+ * the Method Declarations of those methods present in MediaDAOImpl.java
+ * Version: 1.0 Restrictions: N/A
+ * 
+ * @author rauagarw,pratiksa,sayush,sapsaha Date: 13/11/2017
  */
 
 public interface MediaDAO {
@@ -32,37 +30,44 @@ public interface MediaDAO {
 
 	ArtistMasterDTO deleteArtist(int artistId) throws MediaException;
 
-	ArtistMasterDTO insertArtist(ArtistMasterDTO artistMasterDTO) throws MediaException;
+	ArtistMasterDTO insertArtist(ArtistMasterDTO artistMasterDTO)
+			throws MediaException;
 
-	ArtistMasterDTO updateArtist(ArtistMasterDTO artistMasterDTO) throws MediaException;
+	ArtistMasterDTO updateArtist(ArtistMasterDTO artistMasterDTO)
+			throws MediaException;
 
 	int checkLogin(int username, String password) throws MediaException;
 
-	ComposerMasterDTO insertComposer(ComposerMasterDTO composer) throws MediaException;
+	ComposerMasterDTO insertComposer(ComposerMasterDTO composer)
+			throws MediaException;
 
 	List<SongMasterDTO> loadAllSongs() throws MediaException;
 
 	ComposerMasterDTO getComposerById(int composerId) throws MediaException;
 
-	ComposerMasterDTO updateComposer(ComposerMasterDTO composerMasterDTO) throws MediaException;
+	ComposerMasterDTO updateComposer(ComposerMasterDTO composerMasterDTO)
+			throws MediaException;
 
-	void compSongAssoc(ComposerSongAssoc composerSongAssoc) throws MediaException;
+	void compSongAssoc(ComposerSongAssoc composerSongAssoc)
+			throws MediaException;
 
 	void artistSongAssoc(ArtistSongAssoc artistSongAssoc) throws MediaException;
 
-	List<ComposerSongAssoc> getComposerSongs(int composerId) throws MediaException;
+	List<ComposerSongAssoc> getComposerSongs(int composerId)
+			throws MediaException;
 
 	SongMasterDTO listAllSongsForComposer(int songId) throws MediaException;
 
 	List<ArtistSongAssoc> getArtistSongs(int artistId) throws MediaException;
 
-	ModelAndView checkPassword(UserMasterDTO userMasterDTO) throws MediaException;
+	ModelAndView checkPassword(UserMasterDTO userMasterDTO)
+			throws MediaException;
 
-	List<SongMasterDTO> listAllSongs()throws MediaException;
+	List<SongMasterDTO> listAllSongs() throws MediaException;
 
-	SongMasterDTO insertSong(SongMasterDTO songMasterDTO)throws MediaException;
+	SongMasterDTO insertSong(SongMasterDTO songMasterDTO) throws MediaException;
 
-	ComposerMasterDTO deleteComposer(int composerId)throws MediaException;
+	ComposerMasterDTO deleteComposer(int composerId) throws MediaException;
 
 	SongMasterDTO deleteSong(int songId) throws MediaException;
 
