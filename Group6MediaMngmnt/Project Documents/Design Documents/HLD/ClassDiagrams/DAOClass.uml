@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XPD:PROJECT xmlns:XPD="http://www.staruml.com" version="1">
+<XPD:HEADER>
+<XPD:SUBUNITS>
+</XPD:SUBUNITS>
+<XPD:PROFILES>
+<XPD:PROFILE>UMLStandard</XPD:PROFILE>
+</XPD:PROFILES>
+</XPD:HEADER>
+<XPD:BODY>
+<XPD:OBJ name="DocumentElement" type="UMLProject" guid="NuyowY9qvka8Z8RyBrjL9wAA">
+<XPD:ATTR name="Title" type="string">Untitled</XPD:ATTR>
+<XPD:ATTR name="#OwnedElements" type="integer">5</XPD:ATTR>
+<XPD:OBJ name="OwnedElements[0]" type="UMLModel" guid="0TFs8C1wFEu8dUCKMRZ6YAAA">
+<XPD:ATTR name="Name" type="string">Use Case Model</XPD:ATTR>
+<XPD:ATTR name="StereotypeProfile" type="string">UMLStandard</XPD:ATTR>
+<XPD:ATTR name="StereotypeName" type="string">useCaseModel</XPD:ATTR>
+<XPD:REF name="Namespace">NuyowY9qvka8Z8RyBrjL9wAA</XPD:REF>
+<XPD:ATTR name="#OwnedDiagrams" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="OwnedDiagrams[0]" type="UMLUseCaseDiagram" guid="0SPhgb7MgkmCJVTaKZCp2gAA">
+<XPD:ATTR name="Name" type="string">Main</XPD:ATTR>
+<XPD:REF name="DiagramOwner">0TFs8C1wFEu8dUCKMRZ6YAAA</XPD:REF>
+<XPD:OBJ name="DiagramView" type="UMLUseCaseDiagramView" guid="Znj6De7r002uhyOc6wY5lgAA">
+<XPD:REF name="Diagram">0SPhgb7MgkmCJVTaKZCp2gAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedElements[1]" type="UMLModel" guid="vpF+/Qu+1UWsPDGejQOl3wAA">
+<XPD:ATTR name="Name" type="string">Analysis Model</XPD:ATTR>
+<XPD:ATTR name="StereotypeProfile" type="string">UMLStandard</XPD:ATTR>
+<XPD:ATTR name="StereotypeName" type="string">analysisModel</XPD:ATTR>
+<XPD:REF name="Namespace">NuyowY9qvka8Z8RyBrjL9wAA</XPD:REF>
+<XPD:ATTR name="#OwnedDiagrams" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="OwnedDiagrams[0]" type="UMLClassDiagram" guid="heGuAeR9BEqaySclOXQvTQAA">
+<XPD:ATTR name="Name" type="string">Main</XPD:ATTR>
+<XPD:ATTR name="DefaultDiagram" type="boolean">True</XPD:ATTR>
+<XPD:ATTR name="DiagramType" type="string">RobustnessDiagram</XPD:ATTR>
+<XPD:REF name="DiagramOwner">vpF+/Qu+1UWsPDGejQOl3wAA</XPD:REF>
+<XPD:OBJ name="DiagramView" type="UMLClassDiagramView" guid="ZLnB7gJvLkio8z+GI/XaUgAA">
+<XPD:REF name="Diagram">heGuAeR9BEqaySclOXQvTQAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedElements[2]" type="UMLModel" guid="RBtyGIBR30K3iFUcaaZbkQAA">
+<XPD:ATTR name="Name" type="string">Design Model</XPD:ATTR>
+<XPD:ATTR name="StereotypeProfile" type="string">UMLStandard</XPD:ATTR>
+<XPD:ATTR name="StereotypeName" type="string">designModel</XPD:ATTR>
+<XPD:REF name="Namespace">NuyowY9qvka8Z8RyBrjL9wAA</XPD:REF>
+<XPD:ATTR name="#OwnedDiagrams" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="OwnedDiagrams[0]" type="UMLClassDiagram" guid="woUDfiMkbkCSegu5SrNHmgAA">
+<XPD:ATTR name="Name" type="string">Main</XPD:ATTR>
+<XPD:ATTR name="DefaultDiagram" type="boolean">True</XPD:ATTR>
+<XPD:REF name="DiagramOwner">RBtyGIBR30K3iFUcaaZbkQAA</XPD:REF>
+<XPD:OBJ name="DiagramView" type="UMLClassDiagramView" guid="mU5gMUqDXkWVt6ge8VgJ0wAA">
+<XPD:REF name="Diagram">woUDfiMkbkCSegu5SrNHmgAA</XPD:REF>
+<XPD:ATTR name="#OwnedViews" type="integer">3</XPD:ATTR>
+<XPD:OBJ name="OwnedViews[0]" type="UMLPackageView" guid="e82Ykhccr0Gy4N+ddVb1TgAA">
+<XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
+<XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">84</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">52</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">509</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">685</XPD:ATTR>
+<XPD:REF name="Model">TvdJp7eDgUSssUIT+uu2fQAA</XPD:REF>
+<XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="KIxG36f+rk+NYpiQAwNUVQAA">
+<XPD:OBJ name="NameLabel" type="LabelView" guid="r8RLc6H8LECX2UMsrsgylQAA">
+<XPD:ATTR name="Text" type="string">com.cg.mp.dao</XPD:ATTR>
+</XPD:OBJ>
+<XPD:OBJ name="StereotypeLabel" type="LabelView" guid="jtB75+QhyEOXCCJ8d6ptqAAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+</XPD:OBJ>
+<XPD:OBJ name="PropertyLabel" type="LabelView" guid="BrgJSIyhlkGe+eeGVsO9UQAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedViews[1]" type="UMLClassView" guid="IhvL0xreaUOVmZw8wcWT/gAA">
+<XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
+<XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">100</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">112</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">422</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">285</XPD:ATTR>
+<XPD:REF name="Model">QvIYVSPKF0yKPrqYOfOLNwAA</XPD:REF>
+<XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="FvgQ/2EzIEeTXpl3p8HY/AAA">
+<XPD:OBJ name="NameLabel" type="LabelView" guid="qnZpTxOSl0On4Mr4xAIuJAAA">
+<XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">MediaDAO</XPD:ATTR>
+</XPD:OBJ>
+<XPD:OBJ name="StereotypeLabel" type="LabelView" guid="+p/NZBXy50uS+YCeoYYZYQAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+</XPD:OBJ>
+<XPD:OBJ name="PropertyLabel" type="LabelView" guid="rMYUgZFYYkOcFtvxpqkXWgAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="AttributeCompartment" type="UMLAttributeCompartmentView" guid="ol5bFWvf8kOsElnXZMQexwAA">
+<XPD:REF name="Model">QvIYVSPKF0yKPrqYOfOLNwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="OperationCompartment" type="UMLOperationCompartmentView" guid="a07zuwiW1EamnhfqG5EfhgAA">
+<XPD:REF name="Model">QvIYVSPKF0yKPrqYOfOLNwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="TemplateParameterCompartment" type="UMLTemplateParameterCompartmentView" guid="QKRtXZAZ8UqI6JFU0BTXewAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:REF name="Model">QvIYVSPKF0yKPrqYOfOLNwAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedViews[2]" type="UMLClassView" guid="iX7g+K0cYUyf71qkq1VdHwAA">
+<XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
+<XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">100</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">424</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">422</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">285</XPD:ATTR>
+<XPD:REF name="Model">BtRkvSLhCki4aQgNq8trSQAA</XPD:REF>
+<XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="D6bfTObwkUeoIvE/f8H0LgAA">
+<XPD:OBJ name="NameLabel" type="LabelView" guid="CdJU1VD5tUysVR7+e6QYwwAA">
+<XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">MediaDAOImpl</XPD:ATTR>
+</XPD:OBJ>
+<XPD:OBJ name="StereotypeLabel" type="LabelView" guid="wGmkLuByyUOev5YiLsmGIQAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+</XPD:OBJ>
+<XPD:OBJ name="PropertyLabel" type="LabelView" guid="EJLdVxgoJUCiwwSsMkg+TwAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="AttributeCompartment" type="UMLAttributeCompartmentView" guid="0EhZhG+ntEqqedmKi9G1zwAA">
+<XPD:REF name="Model">BtRkvSLhCki4aQgNq8trSQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="OperationCompartment" type="UMLOperationCompartmentView" guid="WiM9EJt8TEGeeCAbJt3iqgAA">
+<XPD:REF name="Model">BtRkvSLhCki4aQgNq8trSQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="TemplateParameterCompartment" type="UMLTemplateParameterCompartmentView" guid="UZt7vzOlUkO/jdLYMSKZZQAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:REF name="Model">BtRkvSLhCki4aQgNq8trSQAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:ATTR name="#OwnedElements" type="integer">3</XPD:ATTR>
+<XPD:OBJ name="OwnedElements[0]" type="UMLPackage" guid="TvdJp7eDgUSssUIT+uu2fQAA">
+<XPD:ATTR name="Name" type="string">com.cg.mp.dao</XPD:ATTR>
+<XPD:REF name="Namespace">RBtyGIBR30K3iFUcaaZbkQAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">1</XPD:ATTR>
+<XPD:REF name="Views[0]">e82Ykhccr0Gy4N+ddVb1TgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedElements[1]" type="UMLClass" guid="QvIYVSPKF0yKPrqYOfOLNwAA">
+<XPD:ATTR name="Name" type="string">MediaDAO</XPD:ATTR>
+<XPD:REF name="Namespace">RBtyGIBR30K3iFUcaaZbkQAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
+<XPD:REF name="Views[0]">IhvL0xreaUOVmZw8wcWT/gAA</XPD:REF>
+<XPD:REF name="Views[1]">ol5bFWvf8kOsElnXZMQexwAA</XPD:REF>
+<XPD:REF name="Views[2]">a07zuwiW1EamnhfqG5EfhgAA</XPD:REF>
+<XPD:REF name="Views[3]">QKRtXZAZ8UqI6JFU0BTXewAA</XPD:REF>
+<XPD:ATTR name="#Operations" type="integer">17</XPD:ATTR>
+<XPD:OBJ name="Operations[0]" type="UMLOperation" guid="geqKvQ/kzEyPY2jkDWPtAgAA">
+<XPD:ATTR name="Name" type="string">loadAllComposer</XPD:ATTR>
+<XPD:REF name="Owner">QvIYVSPKF0yKPrqYOfOLNwAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="47MVuy/wXUiUmTltghG9CQAA">
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">List&lt;ComposerMasterDTO&gt;</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">geqKvQ/kzEyPY2jkDWPtAgAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[1]" type="UMLOperation" guid="oXJbBGAiA0ugXIJc//SOZgAA">
+<XPD:ATTR name="Name" type="string">loadAllArtists</XPD:ATTR>
+<XPD:REF name="Owner">QvIYVSPKF0yKPrqYOfOLNwAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="tg2znrp7DEuu9bAEgJllOgAA">
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">List&lt;ArtistMasterDTO&gt;</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">oXJbBGAiA0ugXIJc//SOZgAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[2]" type="UMLOperation" guid="ddEVKYPoWUKotBSSr3/CBQAA">
+<XPD:ATTR name="Name" type="string">getArtistById</XPD:ATTR>
+<XPD:REF name="Owner">QvIYVSPKF0yKPrqYOfOLNwAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="h2DZZUUpFEKmFoBRsYMugwAA">
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">ArtistMasterDTO</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">ddEVKYPoWUKotBSSr3/CBQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="FeT1iU9L0EyqSoNE0r47pgAA">
+<XPD:ATTR name="Name" type="string">int artistId</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">ddEVKYPoWUKotBSSr3/CBQAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[3]" type="UMLOperation" guid="J3G9uTdtLUqFyw9N1xI0jwAA">
+<XPD:ATTR name="Name" type="string">deleteArtist</XPD:ATTR>
+<XPD:REF name="Owner">QvIYVSPKF0yKPrqYOfOLNwAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="z7ZyVre2ikilUN2AEy5bMwAA">
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">ArtistMasterDTO</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">J3G9uTdtLUqFyw9N1xI0jwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="A7CA3ldJE0qaq6F89e7xuwAA">
+<XPD:ATTR name="Name" type="string">int artistId</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">J3G9uTdtLUqFyw9N1xI0jwAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[4]" type="UMLOperation" guid="0YqehB3Wi0qaZ7t3HzufhAAA">
+<XPD:ATTR name="Name" type="string">insertArtist</XPD:ATTR>
+<XPD:REF name="Owner">QvIYVSPKF0yKPrqYOfOLNwAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="7ysCXmD6uU6ItzF+dx02uAAA">
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">ArtistMasterDTO</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">0YqehB3Wi0qaZ7t3HzufhAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="s8dtWlRbCk6DaQBDaePYmQAA">
+<XPD:ATTR name="Name" type="string">ArtistMasterDTO artistMasterDTO</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">0YqehB3Wi0qaZ7t3HzufhAAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[5]" type="UMLOperation" guid="swPozGFf6kKj8doiHQRPtAAA">
+<XPD:ATTR name="Name" type="string">updateArtist</XPD:ATTR>
+<XPD:REF name="Owner">QvIYVSPKF0yKPrqYOfOLNwAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="T2QZVBomukO2pTLS0Lbs5AAA">
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">ArtistMasterDTO</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">swPozGFf6kKj8doiHQRPtAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="R4dk+/QMhUio8bgHqPGJWAAA">
+<XPD:ATTR name="Name" type="string">ArtistMasterDTO artistMasterDTO</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">swPozGFf6kKj8doiHQRPtAAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[6]" type="UMLOperation" guid="nAdRZvSut0S2XSc/aRdkKgAA">
+<XPD:ATTR name="Name" type="string">checkLogin</XPD:ATTR>
+<XPD:REF name="Owner">QvIYVSPKF0yKPrqYOfOLNwAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">3</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="sJO8j8gjqECyrJXkQM1oiAAA">
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">nAdRZvSut0S2XSc/aRdkKgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="99xS++OsckyNKGdqovzsswAA">
+<XPD:ATTR name="Name" type="string">int username</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">nAdRZvSut0S2XSc/aRdkKgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[2]" type="UMLParameter" guid="SX5zPdMM5U6I/uyWaGiSYAAA">
+<XPD:ATTR name="Name" type="string">String password</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">nAdRZvSut0S2XSc/aRdkKgAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[7]" type="UMLOperation" guid="zUPzQDjkJ023x2gNjrFPSgAA">
+<XPD:ATTR name="Name" type="string">insertComposer</XPD:ATTR>
+<XPD:REF name="Owner">QvIYVSPKF0yKPrqYOfOLNwAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="nDcfDdUmcEGZ6sI2bAWnIQAA">
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">ComposerMasterDTO</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">zUPzQDjkJ023x2gNjrFPSgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="DDYdA/hCtUSkFta1bgZfUQAA">
+<XPD:ATTR name="Name" type="string">ComposerMasterDTO composer</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">zUPzQDjkJ023x2gNjrFPSgAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[8]" type="UMLOperation" guid="yaNLrCqws0i8fJc2UN7zFgAA">
+<XPD:ATTR name="Name" type="string">loadAllSongs</XPD:ATTR>
+<XPD:REF name="Owner">QvIYVSPKF0yKPrqYOfOLNwAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="42vAbWAnEUe4gA4YUR+1WAAA">
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">List&lt;SongMasterDTO&gt;</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">yaNLrCqws0i8fJc2UN7zFgAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[9]" type="UMLOperation" guid="dQZsy+BXHkCsbbcwYuGazgAA">
+<XPD:ATTR name="Name" type="string">getComposerById</XPD:ATTR>
+<XPD:REF name="Owner">QvIYVSPKF0yKPrqYOfOLNwAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="0vrch+t0W0+CTfMq23T9egAA">
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">ComposerMasterDTO</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">dQZsy+BXHkCsbbcwYuGazgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="GV0ZvUujVEuhkIjjYK8PhAAA">
+<XPD:ATTR name="Name" type="string">int composerId</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">dQZsy+BXHkCsbbcwYuGazgAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[10]" type="UMLOperation" guid="w50Th3h3JEy+ohXdHv+pjQAA">
+<XPD:ATTR name="Name" type="string">updateComposer</XPD:ATTR>
+<XPD:REF name="Owner">QvIYVSPKF0yKPrqYOfOLNwAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="9XTwQXUmZUWtS4ZmWyRI3gAA">
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">ComposerMasterDTO</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">w50Th3h3JEy+ohXdHv+pjQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="5VOkdXExp0y+z0IXOj/CVAAA">
+<XPD:ATTR name="Name" type="string">ComposerMasterDTO composerMasterDTO</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">w50Th3h3JEy+ohXdHv+pjQAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[11]" type="UMLOperation" guid="ylAjzo5A8kaGifG9jJk3/QAA">
+<XPD:ATTR name="Name" type="string">compSongAssoc</XPD:ATTR>
+<XPD:REF name="Owner">QvIYVSPKF0yKPrqYOfOLNwAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="yR8/bHM40EW3RC6apgIuJAAA">
+<XPD:ATTR name="Name" type="string">ComposerSongAssoc composerSongAssoc</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">ylAjzo5A8kaGifG9jJk3/QAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[12]" type="UMLOperation" guid="L7t6flzIP0aUqhkwfByLBgAA">
+<XPD:ATTR name="Name" type="string">artistSongAssoc</XPD:ATTR>
+<XPD:REF name="Owner">QvIYVSPKF0yKPrqYOfOLNwAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="Uv5E2dGTM0CdWzRQ3QuVkgAA">
+<XPD:ATTR name="Name" type="string">ArtistSongAssoc artistSongAssoc</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">L7t6flzIP0aUqhkwfByLBgAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[13]" type="UMLOperation" guid="jhKVnEL79UyXUVQpgJwYXgAA">
+<XPD:ATTR name="Name" type="string">getComposerSongs</XPD:ATTR>
+<XPD:REF name="Owner">QvIYVSPKF0yKPrqYOfOLNwAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="iz3vLKxBaEuHp3RIk2Y1lAAA">
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">List&lt;ComposerSongAssoc&gt;</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">jhKVnEL79UyXUVQpgJwYXgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="l4z+ZmbwW0O0RtYYV5q9IwAA">
+<XPD:ATTR name="Name" type="string">int composerId</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">jhKVnEL79UyXUVQpgJwYXgAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[14]" type="UMLOperation" guid="5xFyfoXAREesx/Pdd5XCbQAA">
+<XPD:ATTR name="Name" type="string">listAllSongsForComposer</XPD:ATTR>
+<XPD:REF name="Owner">QvIYVSPKF0yKPrqYOfOLNwAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="FzELeG7kFES6sqouz5FdAgAA">
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">SongMasterDTO</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">5xFyfoXAREesx/Pdd5XCbQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="tETqVLSErUiVxDcmB5KD2gAA">
+<XPD:ATTR name="Name" type="string">int songId</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">5xFyfoXAREesx/Pdd5XCbQAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[15]" type="UMLOperation" guid="FscM2AHGtkW2o375FJFc5gAA">
+<XPD:ATTR name="Name" type="string">getArtistSongs</XPD:ATTR>
+<XPD:REF name="Owner">QvIYVSPKF0yKPrqYOfOLNwAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="lnJArH5Rc0iMk1HCXlgwsQAA">
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">List&lt;ArtistSongAssoc&gt;</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">FscM2AHGtkW2o375FJFc5gAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="OwQH2c19JES5/jXV0cfVHQAA">
+<XPD:ATTR name="Name" type="string">int artistId</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">FscM2AHGtkW2o375FJFc5gAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[16]" type="UMLOperation" guid="5kiVuKR0w0uicS/EjjXsiwAA">
+<XPD:ATTR name="Name" type="string">checkPassword</XPD:ATTR>
+<XPD:REF name="Owner">QvIYVSPKF0yKPrqYOfOLNwAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="J5oS2yuPyEm9EoC9+LM6nwAA">
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">ModelAndView</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">5kiVuKR0w0uicS/EjjXsiwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="k9Q5b6L9HEqAYygOrQZeUQAA">
+<XPD:ATTR name="Name" type="string">UserMasterDTO userMasterDTO</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">5kiVuKR0w0uicS/EjjXsiwAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedElements[2]" type="UMLClass" guid="BtRkvSLhCki4aQgNq8trSQAA">
+<XPD:ATTR name="Name" type="string">MediaDAOImpl</XPD:ATTR>
+<XPD:REF name="Namespace">RBtyGIBR30K3iFUcaaZbkQAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
+<XPD:REF name="Views[0]">iX7g+K0cYUyf71qkq1VdHwAA</XPD:REF>
+<XPD:REF name="Views[1]">0EhZhG+ntEqqedmKi9G1zwAA</XPD:REF>
+<XPD:REF name="Views[2]">WiM9EJt8TEGeeCAbJt3iqgAA</XPD:REF>
+<XPD:REF name="Views[3]">UZt7vzOlUkO/jdLYMSKZZQAA</XPD:REF>
+<XPD:ATTR name="#Operations" type="integer">17</XPD:ATTR>
+<XPD:OBJ name="Operations[0]" type="UMLOperation" guid="OOv6WUvuOkWnF3xavT77RgAA">
+<XPD:ATTR name="Name" type="string">loadAllComposer</XPD:ATTR>
+<XPD:REF name="Owner">BtRkvSLhCki4aQgNq8trSQAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="NV/MfSg8GUmdffnUwYCvPgAA">
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">List&lt;ComposerMasterDTO&gt;</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">OOv6WUvuOkWnF3xavT77RgAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[1]" type="UMLOperation" guid="izf5ANmcvUGTz1DtFBQGKgAA">
+<XPD:ATTR name="Name" type="string">loadAllArtists</XPD:ATTR>
+<XPD:REF name="Owner">BtRkvSLhCki4aQgNq8trSQAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="uNwSVb9wjUOcpHRAunoitwAA">
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">List&lt;ArtistMasterDTO&gt;</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">izf5ANmcvUGTz1DtFBQGKgAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[2]" type="UMLOperation" guid="tEgkcI6B7UK6XnMc/2VzsAAA">
+<XPD:ATTR name="Name" type="string">getArtistById</XPD:ATTR>
+<XPD:REF name="Owner">BtRkvSLhCki4aQgNq8trSQAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="zB85sDpBjkiNbKzt2fKgJQAA">
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">ArtistMasterDTO</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">tEgkcI6B7UK6XnMc/2VzsAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="nndAzqjo3UWf59/cUR/4oQAA">
+<XPD:ATTR name="Name" type="string">int artistId</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">tEgkcI6B7UK6XnMc/2VzsAAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[3]" type="UMLOperation" guid="hLURAIvDY0aqrP5NNXBGAwAA">
+<XPD:ATTR name="Name" type="string">deleteArtist</XPD:ATTR>
+<XPD:REF name="Owner">BtRkvSLhCki4aQgNq8trSQAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="GK7DzN5pwkOSGHFkDeEs+gAA">
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">ArtistMasterDTO</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">hLURAIvDY0aqrP5NNXBGAwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="b6ulkIeBxUaW1JimOwFwcwAA">
+<XPD:ATTR name="Name" type="string">int artistId</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">hLURAIvDY0aqrP5NNXBGAwAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[4]" type="UMLOperation" guid="fmaVbexlFkmiNnvDaOKVNQAA">
+<XPD:ATTR name="Name" type="string">insertArtist</XPD:ATTR>
+<XPD:REF name="Owner">BtRkvSLhCki4aQgNq8trSQAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="iKqsj44O2EiZFOecSztOmAAA">
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">ArtistMasterDTO</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">fmaVbexlFkmiNnvDaOKVNQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="9iVMxE7ROEibvhpjKUdBcQAA">
+<XPD:ATTR name="Name" type="string">ArtistMasterDTO artistMasterDTO</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">fmaVbexlFkmiNnvDaOKVNQAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[5]" type="UMLOperation" guid="gFuuefjs0kqNXj+izKRa0QAA">
+<XPD:ATTR name="Name" type="string">updateArtist</XPD:ATTR>
+<XPD:REF name="Owner">BtRkvSLhCki4aQgNq8trSQAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="Tm95dFgAeU+EUQeItvdk5gAA">
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">ArtistMasterDTO</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">gFuuefjs0kqNXj+izKRa0QAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="i19bgeCzOEy3kXzEzrceCwAA">
+<XPD:ATTR name="Name" type="string">ArtistMasterDTO artistMasterDTO</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">gFuuefjs0kqNXj+izKRa0QAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[6]" type="UMLOperation" guid="f0QwumWDL0OuUDSE0eqcfgAA">
+<XPD:ATTR name="Name" type="string">checkLogin</XPD:ATTR>
+<XPD:REF name="Owner">BtRkvSLhCki4aQgNq8trSQAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">3</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="+GqWOScz90+uIxjqMra9ewAA">
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">f0QwumWDL0OuUDSE0eqcfgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="SqwvPipzikK02YWt9mSP0AAA">
+<XPD:ATTR name="Name" type="string">int username</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">f0QwumWDL0OuUDSE0eqcfgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[2]" type="UMLParameter" guid="gIVxRTa1p0i0T+8otu9XBgAA">
+<XPD:ATTR name="Name" type="string">String password</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">f0QwumWDL0OuUDSE0eqcfgAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[7]" type="UMLOperation" guid="NFJOU9Oy5UKZq7Dc2ZCa+wAA">
+<XPD:ATTR name="Name" type="string">insertComposer</XPD:ATTR>
+<XPD:REF name="Owner">BtRkvSLhCki4aQgNq8trSQAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="CUUWTjps1k+6FzERNX1grgAA">
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">ComposerMasterDTO</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">NFJOU9Oy5UKZq7Dc2ZCa+wAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="KtIa/NvwAEOdtplQ7aCbgwAA">
+<XPD:ATTR name="Name" type="string">ComposerMasterDTO composer</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">NFJOU9Oy5UKZq7Dc2ZCa+wAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[8]" type="UMLOperation" guid="beFuZ4Za8k+FAFm+TyilMAAA">
+<XPD:ATTR name="Name" type="string">loadAllSongs</XPD:ATTR>
+<XPD:REF name="Owner">BtRkvSLhCki4aQgNq8trSQAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="34Xa9iF6MECxUsjtFq1cdQAA">
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">List&lt;SongMasterDTO&gt;</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">beFuZ4Za8k+FAFm+TyilMAAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[9]" type="UMLOperation" guid="MEjto7UoIEKhZH29cCY6JQAA">
+<XPD:ATTR name="Name" type="string">getComposerById</XPD:ATTR>
+<XPD:REF name="Owner">BtRkvSLhCki4aQgNq8trSQAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="mu5trqkiWUOt089tMsamAwAA">
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">ComposerMasterDTO</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">MEjto7UoIEKhZH29cCY6JQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="xzpDMW5yoUmNNvMFcqiloAAA">
+<XPD:ATTR name="Name" type="string">int composerId</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">MEjto7UoIEKhZH29cCY6JQAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[10]" type="UMLOperation" guid="F8YFkqpQfkKYLDJMn4eklwAA">
+<XPD:ATTR name="Name" type="string">updateComposer</XPD:ATTR>
+<XPD:REF name="Owner">BtRkvSLhCki4aQgNq8trSQAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="8p3NfN+0N0eHW1uUPyODdwAA">
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">ComposerMasterDTO</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">F8YFkqpQfkKYLDJMn4eklwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="MKUj9jbs6E2LehMKwEaWcwAA">
+<XPD:ATTR name="Name" type="string">ComposerMasterDTO composerMasterDTO</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">F8YFkqpQfkKYLDJMn4eklwAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[11]" type="UMLOperation" guid="EQkfv+ogE0Gqm+LZDiO5HwAA">
+<XPD:ATTR name="Name" type="string">compSongAssoc</XPD:ATTR>
+<XPD:REF name="Owner">BtRkvSLhCki4aQgNq8trSQAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="Ey52Cgse5ESwp0983+7vUgAA">
+<XPD:ATTR name="Name" type="string">ComposerSongAssoc composerSongAssoc</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">EQkfv+ogE0Gqm+LZDiO5HwAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[12]" type="UMLOperation" guid="H04LeCGXN0eWiOvc3K5BewAA">
+<XPD:ATTR name="Name" type="string">artistSongAssoc</XPD:ATTR>
+<XPD:REF name="Owner">BtRkvSLhCki4aQgNq8trSQAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="uYToNobHA0mZ1sqRknG4gQAA">
+<XPD:ATTR name="Name" type="string">ArtistSongAssoc artistSongAssoc</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">H04LeCGXN0eWiOvc3K5BewAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[13]" type="UMLOperation" guid="pdj2YYOlUk6jvlaQXbIpEgAA">
+<XPD:ATTR name="Name" type="string">getComposerSongs</XPD:ATTR>
+<XPD:REF name="Owner">BtRkvSLhCki4aQgNq8trSQAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="+Hof6ppF6ECS36p3sq6J/wAA">
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">List&lt;ComposerSongAssoc&gt;</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">pdj2YYOlUk6jvlaQXbIpEgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="HwFUj5++lEaHn3db8GQRygAA">
+<XPD:ATTR name="Name" type="string">int composerId</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">pdj2YYOlUk6jvlaQXbIpEgAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[14]" type="UMLOperation" guid="4ppFwvkegUaitTQuCnK9SAAA">
+<XPD:ATTR name="Name" type="string">listAllSongsForComposer</XPD:ATTR>
+<XPD:REF name="Owner">BtRkvSLhCki4aQgNq8trSQAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="1kl6wnyIzk6ASKnaup1djAAA">
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">SongMasterDTO</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">4ppFwvkegUaitTQuCnK9SAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="ts9PFYuTtkeutmY/HifrZwAA">
+<XPD:ATTR name="Name" type="string">int songId</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">4ppFwvkegUaitTQuCnK9SAAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[15]" type="UMLOperation" guid="yYz991Gu0Uis5R2WMoXERQAA">
+<XPD:ATTR name="Name" type="string">getArtistSongs</XPD:ATTR>
+<XPD:REF name="Owner">BtRkvSLhCki4aQgNq8trSQAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="XadnlLTUakWO4Ps/uwwXmAAA">
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">List&lt;ArtistSongAssoc&gt;</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">yYz991Gu0Uis5R2WMoXERQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="Zwd9zoeMcEu7Inyh7e5TkwAA">
+<XPD:ATTR name="Name" type="string">int artistId</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">yYz991Gu0Uis5R2WMoXERQAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[16]" type="UMLOperation" guid="6VlFZ2YdrkGCOgYe5WJpvAAA">
+<XPD:ATTR name="Name" type="string">checkPassword</XPD:ATTR>
+<XPD:REF name="Owner">BtRkvSLhCki4aQgNq8trSQAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="500HAfPSSkmxSttd5GxGjgAA">
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">ModelAndView</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">6VlFZ2YdrkGCOgYe5WJpvAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="iXSVuWOE9E+jEXGJayLW7wAA">
+<XPD:ATTR name="Name" type="string">UserMasterDTO userMasterDTO</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">6VlFZ2YdrkGCOgYe5WJpvAAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedElements[3]" type="UMLModel" guid="3vWnR242JEWUscPWQuoYqAAA">
+<XPD:ATTR name="Name" type="string">Implementation Model</XPD:ATTR>
+<XPD:ATTR name="StereotypeProfile" type="string">UMLStandard</XPD:ATTR>
+<XPD:ATTR name="StereotypeName" type="string">implementationModel</XPD:ATTR>
+<XPD:REF name="Namespace">NuyowY9qvka8Z8RyBrjL9wAA</XPD:REF>
+<XPD:ATTR name="#OwnedDiagrams" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="OwnedDiagrams[0]" type="UMLComponentDiagram" guid="wDi/Dvf1SESj/9oTjgQ/NAAA">
+<XPD:ATTR name="Name" type="string">Main</XPD:ATTR>
+<XPD:REF name="DiagramOwner">3vWnR242JEWUscPWQuoYqAAA</XPD:REF>
+<XPD:OBJ name="DiagramView" type="UMLComponentDiagramView" guid="zZ+/q0OTzEG7N1y5LzZw7QAA">
+<XPD:REF name="Diagram">wDi/Dvf1SESj/9oTjgQ/NAAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedElements[4]" type="UMLModel" guid="XMF6WoFHtEW0MMviKkAbEwAA">
+<XPD:ATTR name="Name" type="string">Deployment Model</XPD:ATTR>
+<XPD:ATTR name="StereotypeProfile" type="string">UMLStandard</XPD:ATTR>
+<XPD:ATTR name="StereotypeName" type="string">deploymentModel</XPD:ATTR>
+<XPD:REF name="Namespace">NuyowY9qvka8Z8RyBrjL9wAA</XPD:REF>
+<XPD:ATTR name="#OwnedDiagrams" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="OwnedDiagrams[0]" type="UMLDeploymentDiagram" guid="tNtBhwA4GkepKmc5qMz9UAAA">
+<XPD:ATTR name="Name" type="string">Main</XPD:ATTR>
+<XPD:REF name="DiagramOwner">XMF6WoFHtEW0MMviKkAbEwAA</XPD:REF>
+<XPD:OBJ name="DiagramView" type="UMLDeploymentDiagramView" guid="iQ3NMkcBg0eZ9QRqN9QP4wAA">
+<XPD:REF name="Diagram">tNtBhwA4GkepKmc5qMz9UAAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:BODY>
+</XPD:PROJECT>
