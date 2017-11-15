@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Artist Song Association</title>
 <link rel="stylesheet" type="text/css" href="css/adminstyle.css">
 <script type="text/javascript" src="javascript/artistSongAssoc.js"></script>
 

@@ -1,6 +1,8 @@
 package com.cg.mp.service;
 
 import java.sql.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -50,7 +52,6 @@ public class MediaServiceImpl implements MediaService {
 	@Override
 	public String checkLogin(int username, String password)
 			throws MediaException {
-		// TODO Auto-generated method stub
 		userFlag = mediaDAO.checkLogin(username, password);
 
 		if (userFlag == 1) {
@@ -81,6 +82,12 @@ public class MediaServiceImpl implements MediaService {
 	@Override
 	public ComposerMasterDTO insertComposer(ComposerMasterDTO composer)
 			throws MediaException {
+		DateFormat df = new SimpleDateFormat("yyyy-mm-dd");
+		String checkDate = df.format(composer.getComposerDiedDate());
+		if("1000-00-01".equalsIgnoreCase(checkDate))
+		{
+			composer.setComposerDiedDate(null);
+		}
 		return mediaDAO.insertComposer(composer);
 	}
 
@@ -130,7 +137,6 @@ public class MediaServiceImpl implements MediaService {
 	@Override
 	public void compSongAssoc(int composerId, int[] songIds, int userId)
 			throws MediaException {
-		// TODO Auto-generated method stub
 		for (int songId : songIds) {
 			ComposerSongAssoc composerSongAssoc = new ComposerSongAssoc();
 			composerSongAssoc.setComposerId(composerId);
@@ -187,7 +193,6 @@ public class MediaServiceImpl implements MediaService {
 	@Override
 	public void artistSongAssoc(int artistId, int[] songIds, int userId)
 			throws MediaException {
-		// TODO Auto-generated method stub
 		for (int songId : songIds) {
 			ArtistSongAssoc artistSongAssoc = new ArtistSongAssoc();
 			artistSongAssoc.setArtistId(artistId);
@@ -210,7 +215,6 @@ public class MediaServiceImpl implements MediaService {
 	@Override
 	public TreeSet<SongMasterDTO> listAllSongsForComposer(int composerId)
 			throws MediaException {
-		// TODO Auto-generated method stub
 		composerSongs = mediaDAO.getComposerSongs(composerId);
 		TreeSet<SongMasterDTO> songs = new TreeSet<SongMasterDTO>(
 				new SongMasterDTO());
@@ -233,6 +237,12 @@ public class MediaServiceImpl implements MediaService {
 	@Override
 	public ArtistMasterDTO insertArtist(ArtistMasterDTO artistMasterDTO)
 			throws MediaException {
+		DateFormat df = new SimpleDateFormat("yyyy-mm-dd");
+		String checkDate = df.format(artistMasterDTO.getArtistDiedDate());
+		if("1000-00-01".equalsIgnoreCase(checkDate))
+		{
+			artistMasterDTO.setArtistDiedDate(null);
+		}
 		return mediaDAO.insertArtist(artistMasterDTO);
 	}
 
@@ -259,7 +269,6 @@ public class MediaServiceImpl implements MediaService {
 	@Override
 	public TreeSet<SongMasterDTO> listAllSongsForArtist(int artistId)
 			throws MediaException {
-		// TODO Auto-generated method stub
 		artistSongs = mediaDAO.getArtistSongs(artistId);
 		TreeSet<SongMasterDTO> songs = new TreeSet<SongMasterDTO>(
 				new SongMasterDTO());
@@ -282,7 +291,6 @@ public class MediaServiceImpl implements MediaService {
 	@Override
 	public ModelAndView checkPassword(String password, String cpassword)
 			throws MediaException {
-		// TODO Auto-generated method stub
 		if (password.equals(cpassword)) {
 			userMasterDTO.setUserPassword(password);
 			userMasterDTO.setCreatedBy(100001);
@@ -304,7 +312,6 @@ public class MediaServiceImpl implements MediaService {
 	 */
 	@Override
 	public List<SongMasterDTO> listAllSongs() throws MediaException {
-		// TODO Auto-generated method stub
 		songs = mediaDAO.listAllSongs();
 		return songs;
 	}
@@ -319,7 +326,6 @@ public class MediaServiceImpl implements MediaService {
 	@Override
 	public SongMasterDTO insertSong(SongMasterDTO songMasterDTO, int userId)
 			throws MediaException {
-		// TODO Auto-generated method stub
 		songMasterDTO.setCreatedBy(userId);
 		songMasterDTO.setCreatedOn(Date.valueOf(LocalDate.now()));
 		songMasterDTO.setUpdatedBy(userId);

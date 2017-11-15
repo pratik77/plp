@@ -175,13 +175,6 @@ public class ArtistMasterDTO {
 		this.updatedOn = updatedOn;
 		this.artistDelFlag = artistDelFlag;
 	}
-	/*
-	 * @Override public String toString() { return
-	 * "Artist Details of "+artistId+" [ artistName=" + artistName +
-	 * ", artistType=" + artistType + ", artistBornDate=" + artistBornDate +
-	 * ", artistDiedDate=" + artistDiedDate + ", createdBy=" + createdBy +
-	 * ", createdOn=" + createdOn + ", updatedBy=" + updatedBy + ", updatedOn="
-	 * + updatedOn +"]"; }
-	 */
+	
 
 }

@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Composer List</title>
 <link rel="stylesheet" type="text/css" href="css/adminstyle.css">
 </head>
 <body>
@@ -61,12 +61,6 @@
 							</tr>
 
 						</c:forEach>
-						<!-- <tr>
-							<td colspan="2"><input type="submit" name="submit"
-								value="modify" /></td>
-							<td colspan="2"><input type="submit" name="submit"
-								value="delete" /></td>
-						</tr> -->
 					</table>
 					<input type="submit" name="submit" value="modify" />
 					<input type="submit" name="submit" value="delete" />

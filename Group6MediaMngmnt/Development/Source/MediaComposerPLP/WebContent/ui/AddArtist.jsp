@@ -60,7 +60,7 @@
 				<br>
 				<div class="row" id="row_dim">
 					<form:label path="artistDiedDate">Artist Death Date:</form:label>
-					<form:input type="date" path="artistDiedDate" max="${sqlDate}" />
+					<form:input type="date" id="artistDiedDate" path="artistDiedDate" value="" max="${sqlDate}" />
 					<br />
 				</div>
 

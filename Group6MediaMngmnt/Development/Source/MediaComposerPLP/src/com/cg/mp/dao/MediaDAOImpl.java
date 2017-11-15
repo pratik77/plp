@@ -8,6 +8,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -31,6 +32,8 @@ import com.cg.mp.util.QueryMapper;
 @Repository
 @Transactional(rollbackOn = MediaException.class)
 public class MediaDAOImpl implements MediaDAO {
+	private static Logger logger = Logger
+			.getLogger(com.cg.mp.dao.MediaDAOImpl.class);
 	@PersistenceContext
 	private EntityManager entityManager;
 	UserMasterDTO userMasterDTO = new UserMasterDTO();
@@ -55,12 +58,14 @@ public class MediaDAOImpl implements MediaDAO {
 		try {
 			users = query.getResultList();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			throw new MediaException(e.getMessage()
 					+ " and problems in checking login");
 		}
-		if (users.size() == 0)
+		if (users.size() == 0) {
+			logger.info("Login unsuccessfull.");
 			return 3;
+		}
+		logger.info("Login successfull.");
 		return users.get(0).getUserFlag();
 	}
 
@@ -74,6 +79,7 @@ public class MediaDAOImpl implements MediaDAO {
 		TypedQuery<ComposerMasterDTO> query = entityManager.createQuery(
 				QueryMapper.query2, ComposerMasterDTO.class);
 		try {
+			logger.info("Composer details retrieved successfully.");
 			return query.getResultList();
 		} catch (Exception e) {
 			throw new MediaException(e.getMessage()
@@ -91,9 +97,9 @@ public class MediaDAOImpl implements MediaDAO {
 		TypedQuery<SongMasterDTO> query = entityManager.createQuery(
 				QueryMapper.query3, SongMasterDTO.class);
 		try {
+			logger.info("Song details retrieved successfully.");
 			return query.getResultList();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			throw new MediaException(e.getMessage()
 					+ " and problems in loading songs.");
 		}
@@ -113,10 +119,10 @@ public class MediaDAOImpl implements MediaDAO {
 			entityManager.persist(composer);
 			entityManager.flush();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			throw new MediaException(e.getMessage()
 					+ " and problems in inserting composers.");
 		}
+		logger.info("Composer details inserted successfully.");
 		return composer;
 	}
 
@@ -134,10 +140,11 @@ public class MediaDAOImpl implements MediaDAO {
 		try {
 			composer = entityManager.find(ComposerMasterDTO.class, composerId);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			throw new MediaException(e.getMessage()
 					+ " and problems in getting composer by Id.");
 		}
+		logger.info("Composer details for " + composerId
+				+ " retrieved successfully.");
 		return composer;
 	}
 
@@ -155,21 +162,20 @@ public class MediaDAOImpl implements MediaDAO {
 			composerMasterDTO = entityManager.merge(composerMasterDTO);
 			entityManager.flush();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			throw new MediaException(e.getMessage()
 					+ " and problems in updating composers.");
 		}
+		logger.info("Composer details updated successfully.");
 		return composerMasterDTO;
 	}
 
 	public void compSongAssoc(ComposerSongAssoc composerSongAssoc)
 			throws MediaException {
-
 		try {
 			entityManager.persist(composerSongAssoc);
 			entityManager.flush();
+			logger.info("Composer and song details asscociated successfully.");
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			throw new MediaException(e.getMessage()
 					+ " and problems in associating composers to songs.");
 		}
@@ -185,9 +191,9 @@ public class MediaDAOImpl implements MediaDAO {
 		TypedQuery<ArtistMasterDTO> query = entityManager.createQuery(
 				QueryMapper.query4, ArtistMasterDTO.class);
 		try {
+			logger.info("Artist details retrieved successfully.");
 			return query.getResultList();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			throw new MediaException(e.getMessage()
 					+ " and problems in loading all artists.");
 		}
@@ -209,10 +215,12 @@ public class MediaDAOImpl implements MediaDAO {
 		try {
 			artistMasterDTO = query.getSingleResult();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+
 			throw new MediaException(e.getMessage()
 					+ " and problems in getting artist by id .");
 		}
+		logger.info("Artist details for Id " + artistId
+				+ " retrieved successfully.");
 		return artistMasterDTO;
 	}
 
@@ -230,10 +238,11 @@ public class MediaDAOImpl implements MediaDAO {
 		try {
 			entityManager.remove(artistMasterDTO);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+
 			throw new MediaException(e.getMessage()
 					+ " and problems in deleting artist.");
 		}
+		logger.info("Artist details deleted successfully.");
 		return artistMasterDTO;
 	}
 
@@ -247,12 +256,12 @@ public class MediaDAOImpl implements MediaDAO {
 	@Override
 	public void artistSongAssoc(ArtistSongAssoc artistSongAssoc)
 			throws MediaException {
-
 		try {
 			entityManager.persist(artistSongAssoc);
 			entityManager.flush();
+			logger.info("Artist and song details associated successfully.");
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+
 			throw new MediaException(e.getMessage()
 					+ " and problems in associating songs to artist..");
 		}
@@ -268,14 +277,14 @@ public class MediaDAOImpl implements MediaDAO {
 	@Override
 	public List<ComposerSongAssoc> getComposerSongs(int composerId)
 			throws MediaException {
-		// TODO Auto-generated method stub
 		TypedQuery<ComposerSongAssoc> query = entityManager.createQuery(
 				QueryMapper.query6, ComposerSongAssoc.class);
 		query.setParameter("pcomposerId", composerId);
 		try {
+			logger.info("Song details for composer retrieved successfully.");
 			return query.getResultList();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+
 			throw new MediaException(e.getMessage()
 					+ " and problems in loading composers and song list.");
 		}
@@ -293,6 +302,7 @@ public class MediaDAOImpl implements MediaDAO {
 	public ArtistMasterDTO insertArtist(ArtistMasterDTO artistMasterDTO) {
 		entityManager.persist(artistMasterDTO);
 		entityManager.flush();
+		logger.info("Artist details inserted successfully.");
 		return artistMasterDTO;
 	}
 
@@ -307,8 +317,8 @@ public class MediaDAOImpl implements MediaDAO {
 	public ArtistMasterDTO updateArtist(ArtistMasterDTO artistMasterDTO) {
 		artistMasterDTO = entityManager.merge(artistMasterDTO);
 		entityManager.flush();
+		logger.info("Artist details updated successfully.");
 		return artistMasterDTO;
-
 	}
 
 	/**
@@ -328,13 +338,14 @@ public class MediaDAOImpl implements MediaDAO {
 			temp = query.getResultList();
 			if (temp.size() == 0) {
 				SongMasterDTO songMasterDTO = new SongMasterDTO();
+				logger.info("Song details do not exist.");
 				return songMasterDTO;
 			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			throw new MediaException(e.getMessage()
 					+ " and problems in loading songs for composer..");
 		}
+		logger.info("Song details retrieved successfully.");
 		return temp.get(0);
 	}
 
@@ -348,14 +359,13 @@ public class MediaDAOImpl implements MediaDAO {
 	@Override
 	public List<ArtistSongAssoc> getArtistSongs(int artistId)
 			throws MediaException {
-		// TODO Auto-generated method stub
 		TypedQuery<ArtistSongAssoc> query = entityManager.createQuery(
 				QueryMapper.query8, ArtistSongAssoc.class);
 		query.setParameter("partistId", artistId);
 		try {
+			logger.info("Artist and song details retrieved successfully.");
 			return query.getResultList();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			throw new MediaException(e.getMessage()
 					+ " and problems in getting songs for artist..");
 		}
@@ -371,15 +381,14 @@ public class MediaDAOImpl implements MediaDAO {
 	@Override
 	public ModelAndView checkPassword(UserMasterDTO userMasterDTO)
 			throws MediaException {
-
 		try {
 			entityManager.persist(userMasterDTO);
 			entityManager.flush();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			throw new MediaException(e.getMessage()
 					+ " and problems in matching password.");
 		}
+		logger.info("User registered successfully.");
 		return new ModelAndView("createSuccess", "userMasterDTO", userMasterDTO);
 	}
 
@@ -392,13 +401,12 @@ public class MediaDAOImpl implements MediaDAO {
 	 */
 	@Override
 	public List<SongMasterDTO> listAllSongs() throws MediaException {
-		// TODO Auto-generated method stub
 		TypedQuery<SongMasterDTO> query = entityManager.createQuery(
 				QueryMapper.query9, SongMasterDTO.class);
 		try {
+			logger.info("Song details for all songs retrieved successfully.");
 			return query.getResultList();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			throw new MediaException(e.getMessage()
 					+ " and problems in loading songs ..");
 		}
@@ -414,15 +422,14 @@ public class MediaDAOImpl implements MediaDAO {
 	@Override
 	public SongMasterDTO insertSong(SongMasterDTO songMasterDTO)
 			throws MediaException {
-		// TODO Auto-generated method stub
 		try {
 			entityManager.persist(songMasterDTO);
 			entityManager.flush();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			throw new MediaException(e.getMessage()
 					+ " and problems in inserting songs.");
 		}
+		logger.info("Song details inserted successfully.");
 		return songMasterDTO;
 	}
 
@@ -442,10 +449,10 @@ public class MediaDAOImpl implements MediaDAO {
 					composerId);
 			entityManager.remove(composerMasterDTO);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			throw new MediaException(e.getMessage()
 					+ " problem in composer deletion");
 		}
+		logger.info("Composer details deleted successfully.");
 		return composerMasterDTO;
 	}
 
@@ -466,6 +473,7 @@ public class MediaDAOImpl implements MediaDAO {
 			throw new MediaException(e.getMessage()
 					+ " and problems in deleting song.");
 		}
+		logger.info("Song details deleted successfully.");
 		return songMasterDTO;
 	}
 

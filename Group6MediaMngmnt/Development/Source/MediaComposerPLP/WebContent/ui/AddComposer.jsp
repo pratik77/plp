@@ -37,7 +37,7 @@
 				<form:label path="composerName">Composer Name:</form:label>
 				<form:input path="composerName" pattern="[A-Za-z]{1}[A-Za-z ]{0,}"
 					title="Name should contain alphabets only" required="true" />
-				<br />`
+				<br />
 
 		<form:label path="composerBornDate">Composer Birth Date:</form:label>
 				<form:input type="date" name="composerBornDate"
@@ -55,7 +55,7 @@
 
 				<div class="row" id="row_dim">
 					<form:label path="composerDiedDate">Composer Death Date:</form:label>
-					<form:input type="date" name="composerDiedDate" max="${sqlDate}"
+					<form:input type="date" id="composerDiedDate" value="" max="${sqlDate}"
 						path="composerDiedDate" />
 					<br />
 				</div>

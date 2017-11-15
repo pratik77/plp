@@ -55,7 +55,6 @@ public class MediaController {
 		try {
 			userFlag = mediaService.checkLogin(username, password);
 		} catch (MediaException e) {
-			// TODO Auto-generated catch block
 			model.addAttribute("message", e.getMessage());
 			return "mediaError";
 		}
@@ -86,7 +85,6 @@ public class MediaController {
 		try {
 			checkPassword = mediaService.checkPassword(password, cpassword);
 		} catch (MediaException e) {
-			// TODO Auto-generated catch block
 			return new ModelAndView("mediaError", "message", e.getMessage());
 		}
 		return checkPassword;
@@ -106,7 +104,6 @@ public class MediaController {
 			composerList = mediaService.loadAllComposer();
 			composerList = mediaService.loadAllComposer();
 		} catch (MediaException e) {
-			// TODO Auto-generated catch block
 			model.addAttribute("message", e.getMessage());
 			return "mediaError";
 		}
@@ -143,7 +140,6 @@ public class MediaController {
 				Date sqlDate = Date.valueOf(ldate);
 				model.addAttribute("sqlDate", sqlDate);
 			} catch (MediaException e) {
-				// TODO Auto-generated catch block
 				model.addAttribute("message", e.getMessage());
 				return "mediaError";
 			}
@@ -157,7 +153,6 @@ public class MediaController {
 						.deleteComposer(composerMasterDTO.getComposerId());
 				composers = mediaService.loadAllComposer();
 			} catch (MediaException e) {
-				// TODO Auto-generated catch block
 				model.addAttribute("message", e.getMessage());
 				return "mediaError";
 			}
@@ -203,8 +198,6 @@ public class MediaController {
 		Date sqlDate = Date.valueOf(ldate);
 		composer.setCreatedOn(sqlDate);
 		composer.setUpdatedOn(sqlDate);
-		System.out.println(composer.getComposerBornDate());
-		System.out.println(composer.getComposerDiedDate());
 		try {
 			ComposerMasterDTO composerCheck = mediaService
 					.insertComposer(composer);
@@ -233,7 +226,6 @@ public class MediaController {
 			@ModelAttribute("composerMasterDTO") ComposerMasterDTO composerMasterDTO,
 			Model model) {
 		composerMasterDTO.setCreatedBy(userId);
-		System.out.println(composerMasterDTO.getComposerId());
 		composerMasterDTO.setUpdatedBy(userId);
 		LocalDate ldate = LocalDate.now();
 		Date sqlDate = Date.valueOf(ldate);
@@ -243,7 +235,6 @@ public class MediaController {
 			ComposerMasterDTO composerCheck = mediaService
 					.updateComposer(composerMasterDTO);
 		} catch (MediaException e) {
-			// TODO Auto-generated catch block
 			model.addAttribute("message", e.getMessage());
 			return "mediaError";
 		}
@@ -267,7 +258,6 @@ public class MediaController {
 			artistList = mediaService.loadAllArtists();
 			artistList = mediaService.loadAllArtists();
 		} catch (MediaException e) {
-			// TODO Auto-generated catch block
 			model.addAttribute("message", e.getMessage());
 			return "mediaError";
 		}
@@ -341,7 +331,6 @@ public class MediaController {
 			@ModelAttribute("artistMasterDTO") ArtistMasterDTO artistMasterDTO,
 			Model model) {
 		artistMasterDTO.setCreatedBy(userId);
-		System.out.println(artistMasterDTO.getArtistId());
 		artistMasterDTO.setUpdatedBy(userId);
 		LocalDate ldate = LocalDate.now();
 		Date sqlDate = Date.valueOf(ldate);
@@ -351,7 +340,6 @@ public class MediaController {
 			ArtistMasterDTO artistCheck = mediaService
 					.updateArtist(artistMasterDTO);
 		} catch (MediaException e) {
-			// TODO Auto-generated catch block
 			model.addAttribute("message", e.getMessage());
 			return "mediaError";
 		}
@@ -400,7 +388,6 @@ public class MediaController {
 			ArtistMasterDTO artistCheck = mediaService
 					.insertArtist(artistMasterDTO);
 		} catch (MediaException e) {
-			// TODO Auto-generated catch block
 			model.addAttribute("message", e.getMessage());
 			return "mediaError";
 		}
@@ -423,7 +410,6 @@ public class MediaController {
 			artists = mediaService.loadAllArtists();
 			songs = mediaService.loadAllSongs();
 		} catch (MediaException e) {
-			// TODO Auto-generated catch block
 			model.addAttribute("message", e.getMessage());
 			return "mediaError";
 		}
@@ -449,7 +435,6 @@ public class MediaController {
 		try {
 			mediaService.compSongAssoc(composerId, songIdList, userId);
 		} catch (MediaException e) {
-			// TODO Auto-generated catch block
 			model.addAttribute("message", e.getMessage());
 			return "mediaError";
 		}
@@ -477,7 +462,6 @@ public class MediaController {
 		try {
 			mediaService.artistSongAssoc(artistId, songIdList, userId);
 		} catch (MediaException e) {
-			// TODO Auto-generated catch block
 			model.addAttribute("message", e.getMessage());
 			return "mediaError";
 		}
@@ -501,7 +485,6 @@ public class MediaController {
 			composers = mediaService.loadAllComposer();
 			songs = mediaService.loadAllSongs();
 		} catch (MediaException e) {
-			// TODO Auto-generated catch block
 			model.addAttribute("message", e.getMessage());
 			return "mediaError";
 		}
@@ -551,6 +534,11 @@ public class MediaController {
 			model.addAttribute("message", e.getMessage());
 			return "mediaError";
 		}
+		if (songs.isEmpty()) {
+			model.addAttribute("message",
+					"No songs exist for the selected Composer");
+			return "mediaEmpty";
+		}
 		model.addAttribute("composerId", composerId);
 		model.addAttribute("songList", songs);
 		return "listAllSongsForComposer";
@@ -569,7 +557,6 @@ public class MediaController {
 		try {
 			artists = mediaService.loadAllArtists();
 		} catch (MediaException e) {
-			// TODO Auto-generated catch block
 			model.addAttribute("message", e.getMessage());
 			return "mediaError";
 		}
@@ -592,9 +579,13 @@ public class MediaController {
 		try {
 			songs = mediaService.listAllSongsForArtist(artistId);
 		} catch (MediaException e) {
-			// TODO Auto-generated catch block
 			model.addAttribute("message", e.getMessage());
 			return "mediaError";
+		}
+		if (songs.isEmpty()) {
+			model.addAttribute("message",
+					"No songs exist for the selected Artist");
+			return "mediaEmpty";
 		}
 		model.addAttribute("artistId", artistId);
 		model.addAttribute("songList", songs);
@@ -614,7 +605,6 @@ public class MediaController {
 		try {
 			songs = mediaService.listAllSongs();
 		} catch (MediaException e) {
-			// TODO Auto-generated catch block
 			model.addAttribute("message", e.getMessage());
 			return "mediaError";
 		}
@@ -657,7 +647,6 @@ public class MediaController {
 			SongMasterDTO songMasterDTONew = mediaService.insertSong(
 					songMasterDTO, userId);
 		} catch (MediaException e) {
-			// TODO Auto-generated catch block
 			model.addAttribute("message", e.getMessage());
 			return "mediaError";
 		}
