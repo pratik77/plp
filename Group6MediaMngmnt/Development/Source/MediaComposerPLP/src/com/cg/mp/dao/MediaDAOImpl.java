@@ -51,7 +51,7 @@ public class MediaDAOImpl implements MediaDAO {
 	@Override
 	public int checkLogin(int username, String password) throws MediaException {
 		TypedQuery<UserMasterDTO> query = entityManager.createQuery(
-				QueryMapper.query1, UserMasterDTO.class);
+				QueryMapper.Query1, UserMasterDTO.class);
 		query.setParameter("puserId", username);
 		query.setParameter("puserPassword", password);
 		List<UserMasterDTO> users;
@@ -77,7 +77,7 @@ public class MediaDAOImpl implements MediaDAO {
 	@Override
 	public List<ComposerMasterDTO> loadAllComposer() throws MediaException {
 		TypedQuery<ComposerMasterDTO> query = entityManager.createQuery(
-				QueryMapper.query2, ComposerMasterDTO.class);
+				QueryMapper.Query2, ComposerMasterDTO.class);
 		try {
 			logger.info("Composer details retrieved successfully.");
 			return query.getResultList();
@@ -95,7 +95,7 @@ public class MediaDAOImpl implements MediaDAO {
 	@Override
 	public List<SongMasterDTO> loadAllSongs() throws MediaException {
 		TypedQuery<SongMasterDTO> query = entityManager.createQuery(
-				QueryMapper.query3, SongMasterDTO.class);
+				QueryMapper.Query3, SongMasterDTO.class);
 		try {
 			logger.info("Song details retrieved successfully.");
 			return query.getResultList();
@@ -189,7 +189,7 @@ public class MediaDAOImpl implements MediaDAO {
 	@Override
 	public List<ArtistMasterDTO> loadAllArtists() throws MediaException {
 		TypedQuery<ArtistMasterDTO> query = entityManager.createQuery(
-				QueryMapper.query4, ArtistMasterDTO.class);
+				QueryMapper.Query4, ArtistMasterDTO.class);
 		try {
 			logger.info("Artist details retrieved successfully.");
 			return query.getResultList();
@@ -210,7 +210,7 @@ public class MediaDAOImpl implements MediaDAO {
 	public ArtistMasterDTO getArtistById(int artistId) throws MediaException {
 		ArtistMasterDTO artistMasterDTO = new ArtistMasterDTO();
 		TypedQuery<ArtistMasterDTO> query = entityManager.createQuery(
-				QueryMapper.query5, ArtistMasterDTO.class);
+				QueryMapper.Query5, ArtistMasterDTO.class);
 		query.setParameter("partistId", artistId);
 		try {
 			artistMasterDTO = query.getSingleResult();
@@ -278,7 +278,7 @@ public class MediaDAOImpl implements MediaDAO {
 	public List<ComposerSongAssoc> getComposerSongs(int composerId)
 			throws MediaException {
 		TypedQuery<ComposerSongAssoc> query = entityManager.createQuery(
-				QueryMapper.query6, ComposerSongAssoc.class);
+				QueryMapper.Query6, ComposerSongAssoc.class);
 		query.setParameter("pcomposerId", composerId);
 		try {
 			logger.info("Song details for composer retrieved successfully.");
@@ -332,7 +332,7 @@ public class MediaDAOImpl implements MediaDAO {
 	public SongMasterDTO listAllSongsForComposer(int songId)
 			throws MediaException {
 		TypedQuery<SongMasterDTO> query = entityManager.createQuery(
-				QueryMapper.query7, SongMasterDTO.class);
+				QueryMapper.Query7, SongMasterDTO.class);
 		query.setParameter("psongId", songId);
 		try {
 			temp = query.getResultList();
@@ -360,7 +360,7 @@ public class MediaDAOImpl implements MediaDAO {
 	public List<ArtistSongAssoc> getArtistSongs(int artistId)
 			throws MediaException {
 		TypedQuery<ArtistSongAssoc> query = entityManager.createQuery(
-				QueryMapper.query8, ArtistSongAssoc.class);
+				QueryMapper.Query8, ArtistSongAssoc.class);
 		query.setParameter("partistId", artistId);
 		try {
 			logger.info("Artist and song details retrieved successfully.");
@@ -402,7 +402,7 @@ public class MediaDAOImpl implements MediaDAO {
 	@Override
 	public List<SongMasterDTO> listAllSongs() throws MediaException {
 		TypedQuery<SongMasterDTO> query = entityManager.createQuery(
-				QueryMapper.query9, SongMasterDTO.class);
+				QueryMapper.Query9, SongMasterDTO.class);
 		try {
 			logger.info("Song details for all songs retrieved successfully.");
 			return query.getResultList();

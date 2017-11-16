@@ -1,0 +1,5 @@
+projectKey=PratikSonarProject1
+serverUrl=http://localhost:9000
+dashboardUrl=http://localhost:9000/dashboard/index/PratikSonarProject1
+ceTaskId=AV-_7JhozSWnjNVmZ6q8
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AV-_7JhozSWnjNVmZ6q8

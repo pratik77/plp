@@ -245,7 +245,7 @@
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="j1XRgZLfS0Wmry8hH3+NAQAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="joqt7St8MUySW7/fcN7K+AAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">IMediaDAO</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">MediaDAO</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="ScVHL/8f+kWAEpYv5SWodAAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -307,7 +307,7 @@
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="m0Dbw6eeA0OSgSrsvieLOgAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="9bwMABB65Eiyfq+xchx6XwAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">IMediaService</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">MediaService</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="6gW7CS+t1U6CgqFMAaZmPQAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -338,7 +338,7 @@
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="WV4X+Izrrk6fMVIUiXGvuQAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="l9F3UQVYzkyfVkfWZ2ys4AAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">MediaService</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">MediaServiceImpl</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="7NbkkCRVpUW1ikf7OtX/xgAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -1094,7 +1094,7 @@
 <XPD:REF name="Views[3]">hqNM2LUHlUmIeWm3FdRXnwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[9]" type="UMLClass" guid="YqyW26EV30i1z2CWezjrXgAA">
-<XPD:ATTR name="Name" type="string">IMediaDAO</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">MediaDAO</XPD:ATTR>
 <XPD:REF name="Namespace">euVr7exHXkaRAh0hW7ijjwAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">Lz0Jkx5kZEm7MSRrVcRRYgAA</XPD:REF>
@@ -1140,7 +1140,7 @@
 <XPD:REF name="Supplier">GwLIMHG7jkGNate59PhW+wAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[15]" type="UMLClass" guid="SnYojErcS0KGqTPJJ8DRRgAA">
-<XPD:ATTR name="Name" type="string">IMediaService</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">MediaService</XPD:ATTR>
 <XPD:REF name="Namespace">euVr7exHXkaRAh0hW7ijjwAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">iLBbxIY3jUibykfEyKZMtwAA</XPD:REF>
@@ -1154,7 +1154,7 @@
 <XPD:REF name="Specializations[0]">2L2z4AQUIUOCMY5JqbykZQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[16]" type="UMLClass" guid="vJlCLJ//GkCnoFkcYUXcpwAA">
-<XPD:ATTR name="Name" type="string">MediaService</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">MediaServiceImpl</XPD:ATTR>
 <XPD:REF name="Namespace">euVr7exHXkaRAh0hW7ijjwAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">EDG3AKb7zUiSirRoB/y6LAAA</XPD:REF>
