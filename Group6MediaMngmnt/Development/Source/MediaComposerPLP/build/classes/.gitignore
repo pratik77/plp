@@ -1,2 +1,3 @@
+/.sonar/
 /log4j.properties
-/com/
+/sonar-project.properties
