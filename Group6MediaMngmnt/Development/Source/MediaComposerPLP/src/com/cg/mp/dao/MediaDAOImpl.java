@@ -58,6 +58,7 @@ public class MediaDAOImpl implements MediaDAO {
 		try {
 			users = query.getResultList();
 		} catch (Exception e) {
+			logger.error(e.getMessage());
 			throw new MediaException(e.getMessage()
 					+ " and problems in checking login");
 		}
@@ -82,6 +83,7 @@ public class MediaDAOImpl implements MediaDAO {
 			logger.info("Composer details retrieved successfully.");
 			return query.getResultList();
 		} catch (Exception e) {
+			logger.error(e.getMessage());
 			throw new MediaException(e.getMessage()
 					+ " and problems in loading composers.");
 		}
@@ -100,6 +102,7 @@ public class MediaDAOImpl implements MediaDAO {
 			logger.info("Song details retrieved successfully.");
 			return query.getResultList();
 		} catch (Exception e) {
+			logger.error(e.getMessage());
 			throw new MediaException(e.getMessage()
 					+ " and problems in loading songs.");
 		}
@@ -119,6 +122,7 @@ public class MediaDAOImpl implements MediaDAO {
 			entityManager.persist(composer);
 			entityManager.flush();
 		} catch (Exception e) {
+			logger.error(e.getMessage());
 			throw new MediaException(e.getMessage()
 					+ " and problems in inserting composers.");
 		}
@@ -140,6 +144,7 @@ public class MediaDAOImpl implements MediaDAO {
 		try {
 			composer = entityManager.find(ComposerMasterDTO.class, composerId);
 		} catch (Exception e) {
+			logger.error(e.getMessage());
 			throw new MediaException(e.getMessage()
 					+ " and problems in getting composer by Id.");
 		}
@@ -162,6 +167,7 @@ public class MediaDAOImpl implements MediaDAO {
 			composerMasterDTO = entityManager.merge(composerMasterDTO);
 			entityManager.flush();
 		} catch (Exception e) {
+			logger.error(e.getMessage());
 			throw new MediaException(e.getMessage()
 					+ " and problems in updating composers.");
 		}
@@ -176,6 +182,7 @@ public class MediaDAOImpl implements MediaDAO {
 			entityManager.flush();
 			logger.info("Composer and song details asscociated successfully.");
 		} catch (Exception e) {
+			logger.error(e.getMessage());
 			throw new MediaException(e.getMessage()
 					+ " and problems in associating composers to songs.");
 		}
@@ -194,6 +201,7 @@ public class MediaDAOImpl implements MediaDAO {
 			logger.info("Artist details retrieved successfully.");
 			return query.getResultList();
 		} catch (Exception e) {
+			logger.error(e.getMessage());
 			throw new MediaException(e.getMessage()
 					+ " and problems in loading all artists.");
 		}
@@ -215,7 +223,7 @@ public class MediaDAOImpl implements MediaDAO {
 		try {
 			artistMasterDTO = query.getSingleResult();
 		} catch (Exception e) {
-
+			logger.error(e.getMessage());
 			throw new MediaException(e.getMessage()
 					+ " and problems in getting artist by id .");
 		}
@@ -238,7 +246,7 @@ public class MediaDAOImpl implements MediaDAO {
 		try {
 			entityManager.remove(artistMasterDTO);
 		} catch (Exception e) {
-
+			logger.error(e.getMessage());
 			throw new MediaException(e.getMessage()
 					+ " and problems in deleting artist.");
 		}
@@ -261,7 +269,7 @@ public class MediaDAOImpl implements MediaDAO {
 			entityManager.flush();
 			logger.info("Artist and song details associated successfully.");
 		} catch (Exception e) {
-
+			logger.error(e.getMessage());
 			throw new MediaException(e.getMessage()
 					+ " and problems in associating songs to artist..");
 		}
@@ -284,7 +292,7 @@ public class MediaDAOImpl implements MediaDAO {
 			logger.info("Song details for composer retrieved successfully.");
 			return query.getResultList();
 		} catch (Exception e) {
-
+			logger.error(e.getMessage());
 			throw new MediaException(e.getMessage()
 					+ " and problems in loading composers and song list.");
 		}
@@ -342,6 +350,7 @@ public class MediaDAOImpl implements MediaDAO {
 				return songMasterDTO;
 			}
 		} catch (Exception e) {
+			logger.error(e.getMessage());
 			throw new MediaException(e.getMessage()
 					+ " and problems in loading songs for composer..");
 		}
@@ -366,6 +375,7 @@ public class MediaDAOImpl implements MediaDAO {
 			logger.info("Artist and song details retrieved successfully.");
 			return query.getResultList();
 		} catch (Exception e) {
+			logger.error(e.getMessage());
 			throw new MediaException(e.getMessage()
 					+ " and problems in getting songs for artist..");
 		}
@@ -385,6 +395,7 @@ public class MediaDAOImpl implements MediaDAO {
 			entityManager.persist(userMasterDTO);
 			entityManager.flush();
 		} catch (Exception e) {
+			logger.error(e.getMessage());
 			throw new MediaException(e.getMessage()
 					+ " and problems in matching password.");
 		}
@@ -407,6 +418,7 @@ public class MediaDAOImpl implements MediaDAO {
 			logger.info("Song details for all songs retrieved successfully.");
 			return query.getResultList();
 		} catch (Exception e) {
+			logger.error(e.getMessage());
 			throw new MediaException(e.getMessage()
 					+ " and problems in loading songs ..");
 		}
@@ -426,6 +438,7 @@ public class MediaDAOImpl implements MediaDAO {
 			entityManager.persist(songMasterDTO);
 			entityManager.flush();
 		} catch (Exception e) {
+			logger.error(e.getMessage());
 			throw new MediaException(e.getMessage()
 					+ " and problems in inserting songs.");
 		}
@@ -449,6 +462,7 @@ public class MediaDAOImpl implements MediaDAO {
 					composerId);
 			entityManager.remove(composerMasterDTO);
 		} catch (Exception e) {
+			logger.error(e.getMessage());
 			throw new MediaException(e.getMessage()
 					+ " problem in composer deletion");
 		}
@@ -470,6 +484,7 @@ public class MediaDAOImpl implements MediaDAO {
 		try {
 			entityManager.remove(songMasterDTO);
 		} catch (Exception e) {
+			logger.error(e.getMessage());
 			throw new MediaException(e.getMessage()
 					+ " and problems in deleting song.");
 		}
